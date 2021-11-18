@@ -7,11 +7,22 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:text="회원가입"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
+        android:layout_marginTop="100dp"
         android:layout_margin="5dp"
         android:background="@color/white"
         android:hint="이메일"
@@ -20,6 +31,7 @@
         android:ems="10"
         android:inputType="textEmailAddress" />
 
+
     <EditText
         android:id="@+id/password"
         android:layout_width="300dp"
@@ -27,26 +39,22 @@
         android:layout_gravity="center"
         android:layout_margin="5dp"
         android:background="@color/white"
-        android:hint="비밀번호"
-        android:textColor="@color/black"
-        android:textSize="20sp"
         android:ems="10"
-        android:inputType="textPassword" />
-
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/joinBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="5dp"
+        android:layout_marginTop="100dp"
         android:background="@color/white"
         android:text="회원가입"
         android:textColor="@color/black"
         android:textSize="20sp" />
-
-
-
 
 
 </LinearLayout>

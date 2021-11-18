@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,13 +17,11 @@ public class MainActivity extends AppCompatActivity {
         Button joinBtn = findViewById(R.id.joinBtn);
         joinBtn.setOnClickListener(v -> {
             startActivity(moveToJoin);
-            finish();
         });
 
         Button loginBtn = findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(v -> {
             startActivity(moveToLogin);
-            finish();
         });
 
     }

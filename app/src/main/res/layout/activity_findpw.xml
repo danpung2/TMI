@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".FindPW"
     android:orientation="vertical"
     >
 
@@ -12,10 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
-        android:text="로그인"
+        android:text="비밀번호 찾기"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="회원가입 시 입력한 이메일로\n새 비밀번호를 보내드릴게요"
+        android:textAlignment="center"
+        android:textColor="#94928d"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/email"
@@ -31,38 +40,14 @@
         android:ems="10"
         android:inputType="textEmailAddress" />
 
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_margin="5dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
-
     <Button
-        android:id="@+id/findPWBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        style="?android:borderlessButtonStyle"
-        android:text="비밀번호를 잊어버리셨나요?"
-        android:textColor="@color/black"
-        android:textSize="10sp" />
-
-    <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/joinBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:background="@color/white"
-        android:text="로그인"
+        android:text="보내기"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
