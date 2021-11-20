@@ -36,13 +36,15 @@ public class JoinActivity extends AppCompatActivity {
         EditText email = findViewById(R.id.email);
         EditText password = findViewById(R.id.password);
 
-        Button joinBtn = findViewById(R.id.joinBtn);
+        String m_email = email.getText().toString().trim();
+        String m_password = password.getText().toString().trim();
 
+        Button joinBtn = findViewById(R.id.joinBtn);
 
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createAccount(email.getText().toString().trim(), password.getText().toString().trim());
+                createAccount(m_email, m_password);
             }
         });
 
@@ -58,7 +60,8 @@ public class JoinActivity extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             // startActivity(moveToStart);
-                        } else {
+                        }
+                        else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(JoinActivity.this, "Authentication failed.",
