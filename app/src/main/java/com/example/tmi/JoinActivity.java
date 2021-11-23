@@ -36,15 +36,12 @@ public class JoinActivity extends AppCompatActivity {
         EditText email = findViewById(R.id.email);
         EditText password = findViewById(R.id.password);
 
-        String m_email = email.getText().toString().trim();
-        String m_password = password.getText().toString().trim();
-
         Button joinBtn = findViewById(R.id.joinBtn);
 
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createAccount(m_email, m_password);
+                createAccount(email.getText().toString().trim(), password.getText().toString().trim());
             }
         });
 
