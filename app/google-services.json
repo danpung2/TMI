@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "546486483425",
+    "project_id": "gachon--tmi",
+    "storage_bucket": "gachon--tmi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546486483425:android:f7703507c41c5abc167aa0",
+        "android_client_info": {
+          "package_name": "com.example.tmi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546486483425-klgeqf7h4a1c0di620to9kf87dtjj2vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvj1AB0jG39xEJ6pZ7T4Z04tuUBG0O8DM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546486483425-klgeqf7h4a1c0di620to9kf87dtjj2vk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
