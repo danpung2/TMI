@@ -1,39 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    >
+    tools:context=".MainActivity">
 
-    <ImageView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/tmp"
-        android:layout_margin="40dp"
-        />
+        android:theme="@style/Theme.TMI.AppBarOverlay">
 
-    <Button
-        android:id="@+id/joinBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="5dp"
-        android:background="@color/white"
-        android:text="회원가입"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="5dp"
-        android:background="@color/white"
-        android:text="로그인"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/btn_tab_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_favorite" />
 
-</LinearLayout>
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/btn_tab_latest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_latest" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/btn_tab_dept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_dept" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/btn_tab_deadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_deadline" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/btn_tab_ability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_ability" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
