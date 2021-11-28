@@ -1,6 +1,8 @@
 package com.example.tmi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +13,14 @@ import com.example.tmi.fragments.DeadlineFragment;
 import com.example.tmi.fragments.DeptFragment;
 import com.example.tmi.fragments.FavoriteFragment;
 import com.example.tmi.fragments.LatestFragment;
+import com.example.tmi.fragments.VPAdapter;
+import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
-    FavoriteFragment favoriteFragment;
-    LatestFragment latestFragment;
-    DeptFragment deptFragment;
-    DeadlineFragment deadlineFragment;
-    AbilityFragment abilityFragment;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
 
 
 
@@ -27,61 +29,25 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn_fav = findViewById(R.id.btn_tab_favorite);
-        Button btn_latest = findViewById(R.id.btn_tab_latest);
-        Button btn_dept = findViewById(R.id.btn_tab_dept);
-        Button btn_deadline = findViewById(R.id.btn_tab_deadline);
-        Button btn_ability = findViewById(R.id.btn_tab_ability);
+        String txt_favorite = getString(R.string.tab_favorite);
+        String txt_latest = getString(R.string.tab_latest);
+        String txt_dept = getString(R.string.tab_dept);
+        String txt_deadline = getString(R.string.tab_deadline);
+        String txt_ability = getString(R.string.tab_ability);
 
+        tabLayout = findViewById(R.id.tab_layout);
+        viewPager = findViewById(R.id.view_pager);
 
-        favoriteFragment = new FavoriteFragment();
-        latestFragment = new LatestFragment();
-        deptFragment = new DeptFragment();
-        deadlineFragment = new DeadlineFragment();
-        abilityFragment = new AbilityFragment();
+        tabLayout.setupWithViewPager(viewPager);
 
-        //initial fragment -> favorite
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, favoriteFragment).commit();
+        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        vpAdapter.addFragment(new FavoriteFragment(), txt_favorite);
+        vpAdapter.addFragment(new LatestFragment(), txt_latest);
+        vpAdapter.addFragment(new DeptFragment(), txt_dept);
+        vpAdapter.addFragment(new DeadlineFragment(), txt_deadline);
+        vpAdapter.addFragment(new AbilityFragment(), txt_ability);
 
-
-        // button click event
-
-        btn_fav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, favoriteFragment).commit();
-            }
-        });
-
-        btn_latest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, latestFragment).commit();
-            }
-        });
-
-        btn_dept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, deptFragment).commit();
-            }
-        });
-
-        btn_deadline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, deadlineFragment).commit();
-            }
-        });
-
-        btn_ability.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, abilityFragment).commit();
-            }
-        });
+        viewPager.setAdapter(vpAdapter);
 
     }
-
-
 }
