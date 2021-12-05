@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -23,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(v -> {
             startActivity(moveToLogin);
         });
+
+
+        new Thread(() -> {
+            ContestCrawler crawler = new ContestCrawler();
+            try {
+                crawler.LoadExhibition();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+
+
+
+//        SaveInfo saveInfo = new SaveInfo(crawler.Title, crawler.First_category, crawler.DDay, crawler.Second_category, crawler.StartDate, crawler.DueDate,
+//                crawler.Team, crawler.NumPerson, crawler.MaxNum, crawler.Link,crawler.Image_Link);
+//        saveInfo.infoUpload();
 
     }
 }

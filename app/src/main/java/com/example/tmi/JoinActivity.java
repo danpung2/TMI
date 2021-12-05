@@ -20,11 +20,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
 public class JoinActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    private String userEmail;
 
 
     @Override
@@ -41,7 +43,8 @@ public class JoinActivity extends AppCompatActivity {
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createAccount(email.getText().toString().trim(), password.getText().toString().trim());
+                userEmail = email.getText().toString().trim();
+                createAccount(userEmail, password.getText().toString().trim());
             }
         });
 
@@ -67,6 +70,11 @@ public class JoinActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+        HashMap<Object, String> hashMap = new HashMap<>();
+        hashMap.put("email", userEmail);
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        database.collection("Users").document(userEmail).set(hashMap);
         // [END create_user_with_email]
     }
 }
