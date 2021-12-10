@@ -1,10 +1,12 @@
 package com.example.tmi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.tmi.fragments.JobFragment;
 import com.example.tmi.fragments.DeadlineFragment;
@@ -18,12 +20,34 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private SearchView searchView;
+    TextView textView_test;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        searchView = findViewById(R.id.search_view);
+        textView_test = findViewById(R.id.textView_test);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // 입력받은 문자열 처리
+                textView_test.setText(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                // 입력란의 문자열이 바뀔 때 처리
+                return false;
+            }
+        });
+
+
 
 
         String txt_favorite = getString(R.string.tab_favorite);
