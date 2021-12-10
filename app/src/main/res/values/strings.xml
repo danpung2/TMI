@@ -8,5 +8,6 @@
     <string name="title_activity_main2">MainActivity2</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="search_hint">검색어를 입력하세요</string>
 
 </resources>

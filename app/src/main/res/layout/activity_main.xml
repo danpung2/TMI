@@ -1,54 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+        <LinearLayout
+            android:id="@+id/linear"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitCenter"
+                android:tint="@color/dark_gray"
+                app:srcCompat="@drawable/baseline_menu_24" />
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_margin="10dp"
+                android:layout_weight="10"
+                android:background="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+
+
+                <ImageView
+                    android:id="@+id/btn_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/baseline_search_24"
+                    app:tint="@color/white" />
+
+                <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:singleLine="true"
+                android:backgroundTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:hint="@string/search_hint"
+                    android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:completionThreshold="1"
+                tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.TMI.AppBarOverlay">
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="center">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/btn_tab_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_favorite" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/btn_tab_favorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_favorite" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/btn_tab_latest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_latest" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/btn_tab_latest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_latest" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/btn_tab_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_popular" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/btn_tab_popular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_popular" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/btn_tab_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_deadline" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/btn_tab_deadline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_deadline" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/btn_tab_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_job" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/btn_tab_job"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_job" />
-
-        </com.google.android.material.tabs.TabLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
@@ -56,4 +115,5 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>
