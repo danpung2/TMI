@@ -2,9 +2,9 @@
     <string name="app_name">TMI</string>
     <string name="tab_favorite">즐겨찾기</string>
     <string name="tab_latest">최신순</string>
-    <string name="tab_dept">학과별</string>
+    <string name="tab_popular">인기순</string>
     <string name="tab_deadline">마감순</string>
-    <string name="tab_ability">핵심역량별</string>
+    <string name="tab_job">취업</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>

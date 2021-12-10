@@ -12,13 +12,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tmi.R;
 
-public class AbilityFragment extends Fragment {
+public class PopularFragment extends Fragment {
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_ability, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_popular, container, false);
 
         return layout;
     }

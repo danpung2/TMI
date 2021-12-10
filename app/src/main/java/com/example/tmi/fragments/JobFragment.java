@@ -12,13 +12,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tmi.R;
 
-public class DeptFragment extends Fragment {
+public class JobFragment extends Fragment {
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_dept, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_job, container, false);
 
         return layout;
     }
