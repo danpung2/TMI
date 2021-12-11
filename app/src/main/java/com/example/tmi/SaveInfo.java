@@ -1,31 +1,31 @@
 package com.example.tmi;
 
-import android.net.Uri;
 import android.util.Log;
-
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class SaveInfo {
 
-    private static final String TAG = "LOG";
+    private static final String TAG = "태그";
     private String filename = "no_image.jpg";
     private String Title;
     private String First_category;
@@ -38,6 +38,8 @@ public class SaveInfo {
     private String MaxNum;
     private String Link;
     private String Image_Link;
+    FirebaseFirestore database = FirebaseFirestore.getInstance();
+    FirebaseStorage storage = FirebaseStorage.getInstance();
 
     public SaveInfo(String Title, String First_category, String DDay, String Second_category, String StartDate, String DueDate, String Team,
                     String NumPerson, String MaxNum, String Link, String Image_Link){
@@ -73,11 +75,13 @@ public class SaveInfo {
         hashMap.put("MaxNum", MaxNum);
         hashMap.put("Link", Link);
         hashMap.put("filename", filename);
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection("Exhibitions").document(Title).set(hashMap);
+
     }
 
     private void uploadFile(String imagePath) {
+
+
         //storage에 이미지 전송
         if (imagePath != null) {
 
@@ -85,7 +89,6 @@ public class SaveInfo {
                 InputStream inputStream = new URL(imagePath).openStream();
 
             //storage
-            FirebaseStorage storage = FirebaseStorage.getInstance();
             //공모전 이릉으로 파일명 생성
             filename = Title + ".png";
             //storage 주소와 폴더 파일명을 지정해 준다.
@@ -120,6 +123,69 @@ public class SaveInfo {
             }
         } else {
         }
+    }
+
+    public void updateExhibitions(){
+
+        SimpleDateFormat sdformat = new
+                SimpleDateFormat("yyyy.MM.dd.hh:mm");
+        //기한 지난 공모전 삭제
+        database.collection("Exhibitions")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                try {
+                                    String DueD = document.get("DueDate").toString();
+                                    Date date1 = sdformat.parse(DueD.substring(0,10)+"."+DueD.substring(16));
+                                    Date date_now = new Date(System.currentTimeMillis());
+                                    Date date2 = sdformat.parse(sdformat.format(date_now));
+                                    if(date2.compareTo(date1) > 0) {
+                                        document.getReference().delete()
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Log.w(TAG, "Error deleting document", e);
+                                                    }
+                                                });
+                                        StorageReference storageRef = storage.getReference();
+                                        StorageReference desertRef = storageRef.child("images/"+document.get("Title")+".png");
+                                        desertRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                // File deleted successfully
+                                            }
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception exception) {
+                                                // Uh-oh, an error occurred!
+                                            }
+                                        });
+
+                                    }
+
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+
+
     }
 
 }

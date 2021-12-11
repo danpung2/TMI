@@ -25,6 +25,7 @@ public class ContestCrawler {
 	private String MaxNum;
 	private String Link;
 	private String Image_Link;
+	private SaveInfo saveInfo;
 
 	private static String url = "https://wind.gachon.ac.kr/ko/program/all/list/all";
 	private static String nomalUrl = "https://wind.gachon.ac.kr/";
@@ -199,7 +200,7 @@ public class ContestCrawler {
 					Link = link;
 					Image_Link = ImageLink;
 
-					SaveInfo saveInfo = new SaveInfo(Title, First_category, DDay, Second_category, StartDate, DueDate,
+					saveInfo = new SaveInfo(Title, First_category, DDay, Second_category, StartDate, DueDate,
 							Team, NumPerson, MaxNum, Link,  Image_Link);
 					saveInfo.infoUpload();
 
@@ -220,5 +221,6 @@ public class ContestCrawler {
 				e.printStackTrace();
 			}
 		}
+		saveInfo.updateExhibitions();
 	}
 }
