@@ -6,7 +6,11 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import java.io.IOException;
 
 import com.example.tmi.fragments.JobFragment;
 import com.example.tmi.fragments.DeadlineFragment;
@@ -68,6 +72,23 @@ public class MainActivity extends AppCompatActivity {
         vpAdapter.addFragment(new JobFragment(), txt_job);
 
         viewPager.setAdapter(vpAdapter);
+
+
+        new Thread(() -> {
+            ContestCrawler crawler = new ContestCrawler();
+            try {
+                crawler.LoadExhibition();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+
+
+
+//        SaveInfo saveInfo = new SaveInfo(crawler.Title, crawler.First_category, crawler.DDay, crawler.Second_category, crawler.StartDate, crawler.DueDate,
+//                crawler.Team, crawler.NumPerson, crawler.MaxNum, crawler.Link,crawler.Image_Link);
+//        saveInfo.infoUpload();
 
     }
 }
