@@ -13,5 +13,5 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="favorite fragment" />
+        android:text="scrap fragment" />
 </LinearLayout>
