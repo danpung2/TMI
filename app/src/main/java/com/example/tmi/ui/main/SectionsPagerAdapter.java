@@ -17,7 +17,7 @@ import com.example.tmi.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_scrap, R.string.tab_latest, R.string.tab_popular, R.string.tab_deadline, R.string.tab_job};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_favorite, R.string.tab_latest, R.string.tab_popular, R.string.tab_deadline, R.string.tab_job};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {

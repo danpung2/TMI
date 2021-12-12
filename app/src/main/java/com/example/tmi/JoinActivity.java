@@ -27,6 +27,7 @@ import java.util.HashMap;
 public class JoinActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String userEmail;
+    private Intent moveToLogin;
 
 
     @Override
@@ -37,6 +38,8 @@ public class JoinActivity extends AppCompatActivity {
 
         EditText email = findViewById(R.id.email);
         EditText password = findViewById(R.id.password);
+
+        moveToLogin = new Intent(this, LoginActivity.class);
 
         Button joinBtn = findViewById(R.id.joinBtn);
 
@@ -58,13 +61,16 @@ public class JoinActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
+                            Toast.makeText(JoinActivity.this, "회원가입 성공",
+                                    Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            // startActivity(moveToStart);
+                            startActivity(moveToLogin);
+                            finish();
                         }
                         else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(JoinActivity.this, "Authentication failed.",
+                            Toast.makeText(JoinActivity.this, "비밀번호는 6자리 이상이어야합니다.",
                                     Toast.LENGTH_SHORT).show();
                             return;
                         }

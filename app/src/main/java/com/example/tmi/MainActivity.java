@@ -5,15 +5,20 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
 import com.example.tmi.fragments.JobFragment;
 import com.example.tmi.fragments.DeadlineFragment;
 import com.example.tmi.fragments.PopularFragment;
-import com.example.tmi.fragments.ScrapFragment;
+import com.example.tmi.fragments.FavoriteFragment;
 import com.example.tmi.fragments.LatestFragment;
 import com.example.tmi.fragments.VPAdapter;
 import com.google.android.material.tabs.TabLayout;
@@ -23,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private SearchView searchView;
+    private ImageButton setting;
     TextView textView_test;
 
 
@@ -30,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setting = findViewById(R.id.settingBtn);
+
+        Intent moveToSetting = new Intent(this, SettingActivity.class);
+
+        setting.setOnClickListener(v -> {
+            startActivity(moveToSetting);
+        });
 
         searchView = findViewById(R.id.search_view);
         textView_test = findViewById(R.id.textView_test);
@@ -52,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        String txt_scrap = getString(R.string.tab_scrap);
+        String txt_favorite = getString(R.string.tab_favorite);
         String txt_deadline = getString(R.string.tab_deadline);
         String txt_popular = getString(R.string.tab_popular);
         String txt_latest = getString(R.string.tab_latest);
@@ -63,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new ScrapFragment(), txt_scrap);
+        vpAdapter.addFragment(new FavoriteFragment(), txt_favorite);
         vpAdapter.addFragment(new DeadlineFragment(), txt_latest);
         vpAdapter.addFragment(new PopularFragment(), txt_popular);
         vpAdapter.addFragment(new LatestFragment(), txt_deadline);
