@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -16,11 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tmi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -40,11 +44,10 @@ public class FavoriteFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         PostAdapter adapter = new PostAdapter();
 
-//        showData(adapter);
+        showData(adapter);
 
         return layout;
     }
-
 
 
     @Override
@@ -52,27 +55,54 @@ public class FavoriteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private void showData(PostAdapter adapter){
 
-        db.collection("Users").whereEqualTo("email", user.getEmail()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        DocumentReference docRef = db.collection("Users").document(user.getUid());
+        Task<DocumentSnapshot> documentSnapshotTask = docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    //show data
-//                    QuerySnapshot temp = task.getResult();
-//                    DocumentSnapshot doc = (DocumentSnapshot) temp.getDocuments();
-//                    doc.get
-//
-//                    for (DocumentSnapshot doc : task.getResult()) {
-//
-//
-//                    }
-//
-//                } else {
-//                    Log.d("TAG", "Error getting documents: ", task.getException());
-//                }
+            public void onSuccess(DocumentSnapshot document) {
+
+
+                // 배열에 저장된 HeartList 제목을 가져온다.
+                String title = document.getString("HeartList");
+
+                // 테스트
+                Toast.makeText(getContext(), "title", Toast.LENGTH_LONG).show();
+
+
+
+                /* HeartList와 이름과 Exhibitions의 제목 서치하여 생성 */
+                db.collection("Exhibitions").whereEqualTo("Title", title).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            //show data
+                            for (DocumentSnapshot doc : task.getResult()) {
+
+                                String Title = doc.getString("Title");
+                                String DDay = doc.getString("DDay");
+                                String startDate = doc.getString("StartDate");
+                                String DueDate = doc.getString("DueDate");
+                                String Team = doc.getString("Team");
+                                String NumPerson = doc.getString("NumPerson");
+                                String MaxNum = doc.getString("MaxNum");
+                                String Link = doc.getString("Link");
+                                String filename = doc.getString("filename");
+
+                                user = FirebaseAuth.getInstance().getCurrentUser();
+                                adapter.addItem(new PostInfo(Title, DDay, startDate, DueDate, Team, NumPerson, MaxNum, Link, filename));
+
+                                //set adapter to recyclerview
+                                recyclerView.setAdapter(adapter);
+                            }
+                        } else {
+                            Log.d("TAG", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
             }
         });
-    }
+    };
 }
