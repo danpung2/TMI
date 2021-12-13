@@ -80,7 +80,7 @@ public class JoinActivity extends AppCompatActivity {
         HashMap<Object, String> hashMap = new HashMap<>();
         hashMap.put("email", userEmail);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
-        database.collection("Users").document(userEmail).set(hashMap);
+        database.collection("Users").document(mAuth.getCurrentUser().getUid()).set(hashMap);
         // [END create_user_with_email]
     }
 }

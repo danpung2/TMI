@@ -28,12 +28,10 @@ public class LatestFragment extends Fragment {
     RecyclerView recyclerView;
     FirebaseUser user;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_latest, container, false);
-
 
         //initialize views
         recyclerView = (RecyclerView)layout.findViewById(R.id.recycler_view);
@@ -46,8 +44,6 @@ public class LatestFragment extends Fragment {
 
         return layout;
     }
-
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
