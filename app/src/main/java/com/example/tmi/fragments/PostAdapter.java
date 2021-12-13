@@ -21,9 +21,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -36,11 +38,11 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     ArrayList<PostInfo> items = new ArrayList<PostInfo>();
     private static final String TAG = "PostAdapter";
+    private FirebaseUser user;
     ImageButton heart;
     ArrayList userlist_heart;
     Boolean heart_clicked = false;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
 
     @NonNull
     @Override
@@ -79,13 +81,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tv_Title = (TextView) itemView.findViewById(R.id.tv_Title);
             tv_Team = (TextView) itemView.findViewById(R.id.tv_team);
             tv_Maximum = (TextView) itemView.findViewById(R.id.tv_maximum);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //링크로 들어가기
-                }
-            });
         }
 
         public void setItem(PostInfo item) {
@@ -94,6 +89,24 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tv_Title.setText(item.getTitle()); // 제목
             tv_Team.setText(item.getTeam()); // 개인 or 팀
             tv_Maximum.setText(item.getNumPerson() + "/" + item.getMaxNum()); // 현재 참여자 수 / 최대 참여자 수
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //링크로 들어가기
+                }
+            });
+
+            iv_heart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    user = FirebaseAuth.getInstance().getCurrentUser();
+                    //공모전 스크랩
+                    iv_heart.setImageResource(R.drawable.baseline_favorite_24);
+                    db.collection("Users").document(user.getUid())
+                            .update("HeartList", FieldValue.arrayUnion(item.getTitle()));
+                }
+            });
 
             DocumentReference docRef = db.collection("Exhibitions").document(item.getTitle());
             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -137,20 +150,20 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         }
     }
 
-        public void addItem(PostInfo item) {
-            items.add(item);
-        }
-
-        public void setItems(ArrayList<PostInfo> items) {
-            this.items = items;
-        }
-
-        public PostInfo getItem(int position) {
-            return items.get(position);
-        }
-
-        public void setItem(int position, PostInfo item) {
-            items.set(position, item);
-        }
+    public void addItem(PostInfo item) {
+        items.add(item);
     }
+
+    public void setItems(ArrayList<PostInfo> items) {
+        this.items = items;
+    }
+
+    public PostInfo getItem(int position) {
+        return items.get(position);
+    }
+
+    public void setItem(int position, PostInfo item) {
+        items.set(position, item);
+    }
+}
 
