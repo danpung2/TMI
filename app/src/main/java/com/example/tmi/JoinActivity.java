@@ -64,6 +64,10 @@ public class JoinActivity extends AppCompatActivity {
                             Toast.makeText(JoinActivity.this, "회원가입 성공",
                                     Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
+                            HashMap<Object, String> hashMap = new HashMap<>();
+                            hashMap.put("email", userEmail);
+                            FirebaseFirestore database = FirebaseFirestore.getInstance();
+                            database.collection("Users").document(mAuth.getCurrentUser().getUid()).set(hashMap);
                             startActivity(moveToLogin);
                             finish();
                         }
@@ -77,10 +81,7 @@ public class JoinActivity extends AppCompatActivity {
                     }
                 });
 
-        HashMap<Object, String> hashMap = new HashMap<>();
-        hashMap.put("email", userEmail);
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        database.collection("Users").document(mAuth.getCurrentUser().getUid()).set(hashMap);
+
         // [END create_user_with_email]
     }
 }
