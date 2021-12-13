@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         setting = findViewById(R.id.settingBtn);
 
-//        Intent moveToSetting = new Intent(this, SettingActivity.class);
-//
-//        setting.setOnClickListener(v -> {
-//            startActivity(moveToSetting);
-//        });
+        Intent moveToSetting = new Intent(this, SettingActivity.class);
+
+        setting.setOnClickListener(v -> {
+            startActivity(moveToSetting);
+        });
 
         searchView = findViewById(R.id.search_view);
 

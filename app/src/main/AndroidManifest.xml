@@ -27,7 +27,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".FindPW" />
         <activity android:name=".SearchViewActivity" />
-<!--        <activity android:name=".SettingActivity"/>-->
+        <activity android:name=".SettingActivity"/>
     </application>
 
 </manifest>
