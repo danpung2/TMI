@@ -15,7 +15,7 @@ import java.io.IOException;
 import com.example.tmi.fragments.JobFragment;
 import com.example.tmi.fragments.DeadlineFragment;
 import com.example.tmi.fragments.PopularFragment;
-import com.example.tmi.fragments.FavoriteFragment;
+import com.example.tmi.fragments.ScrapFragment;
 import com.example.tmi.fragments.LatestFragment;
 import com.example.tmi.fragments.VPAdapter;
 import com.google.android.material.tabs.TabLayout;
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        vpAdapter.addFragment(new FavoriteFragment(), txt_favorite);
+        vpAdapter.addFragment(new ScrapFragment(), txt_favorite);
         vpAdapter.addFragment(new LatestFragment(), txt_latest);
         vpAdapter.addFragment(new PopularFragment(), txt_popular);
         vpAdapter.addFragment(new DeadlineFragment(), txt_deadline);

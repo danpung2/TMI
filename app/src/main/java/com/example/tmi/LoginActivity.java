@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
+    public static boolean isLogin = false;
     private FirebaseAuth mAuth;
     private Intent moveToMain;
     @Override
@@ -61,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "로그인 성공",
                                     Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
+                            isLogin = true;
                             startActivity(moveToMain);
                             finish();
 
