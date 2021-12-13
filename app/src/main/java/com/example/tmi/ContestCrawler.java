@@ -131,10 +131,12 @@ public class ContestCrawler {
 						}
 					}
 
+
 					/* 카테고리 */
 					Elements e2 = doc2.getElementsByAttributeValue("class", "category");
-					Element e3 = e2.get(1);
-					String category = e3.select("div").text();
+					Element e3 = e2.get(2);
+
+					String category = e3.text();
 					String first_category = category.substring(0, category.indexOf(" "));
 					String second_category = category.substring(category.indexOf(" ") + 1);
 
