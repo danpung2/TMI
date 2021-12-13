@@ -5,6 +5,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -42,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         searchView = findViewById(R.id.search_view);
-        textView_test = findViewById(R.id.textView_test);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 // 입력받은 문자열 처리
-                textView_test.setText(query);
+                Intent moveToSearchView = new Intent(getApplicationContext(), SearchViewActivity.class);
+                moveToSearchView.putExtra("query", query);
+                startActivity(moveToSearchView);
                 return true;
             }
 

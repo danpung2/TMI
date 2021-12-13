@@ -20,10 +20,10 @@ public class StartActivity extends AppCompatActivity {
         Intent moveToLogin = new Intent(this, LoginActivity.class);
         Intent moveToMain = new Intent(this, MainActivity.class);
 
-        if(user != null){
-            startActivity(moveToMain);
-            finish();
-        }
+//        if(user != null){
+//            startActivity(moveToMain);
+//            finish();
+//        }
 
         Button joinBtn = findViewById(R.id.joinBtn);
         joinBtn.setOnClickListener(v -> {
