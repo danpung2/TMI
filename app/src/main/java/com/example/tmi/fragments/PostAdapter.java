@@ -62,11 +62,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;//프로필
+        ImageView imageView;
         ImageView iv_heart;
         TextView tv_Dday;
         TextView tv_Date;
         TextView tv_Title;
+        TextView tv_Team;
+        TextView tv_Maximum;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,6 +77,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             iv_heart = itemView.findViewById(R.id.iv_heart);
             tv_Date = (TextView) itemView.findViewById(R.id.tv_Date);
             tv_Title = (TextView) itemView.findViewById(R.id.tv_Title);
+            tv_Team = (TextView) itemView.findViewById(R.id.tv_team);
+            tv_Maximum = (TextView) itemView.findViewById(R.id.tv_maximum);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -85,9 +89,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         }
 
         public void setItem(PostInfo item) {
-            tv_Dday.setText(item.getDDay());//D-day
-            tv_Date.setText(item.getDueDate());//기한
-            tv_Title.setText(item.getTitle());//제목
+            tv_Dday.setText(item.getDDay()); // D-day
+            tv_Date.setText(item.getDueDate()); // 기한
+            tv_Title.setText(item.getTitle()); // 제목
+            tv_Team.setText(item.getTeam()); // 개인 or 팀
+            tv_Maximum.setText(item.getNumPerson() + "/" + item.getMaxNum()); // 현재 참여자 수 / 최대 참여자 수
 
             DocumentReference docRef = db.collection("Exhibitions").document(item.getTitle());
             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

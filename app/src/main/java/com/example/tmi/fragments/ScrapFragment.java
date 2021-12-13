@@ -19,7 +19,7 @@ public class ScrapFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_scarp, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_scrap, container, false);
 
         return layout;
     }

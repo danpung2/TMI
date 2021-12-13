@@ -38,9 +38,6 @@ import java.util.List;
 
 public class DeadlineFragment extends Fragment {
     RecyclerView recyclerView;
-    List<PostInfo> postInfoList = new ArrayList<>();
-    RecyclerView.LayoutManager layoutManager;
-    PostAdapter adapter;
     FirebaseUser user;
 
     @Nullable
@@ -91,8 +88,6 @@ public class DeadlineFragment extends Fragment {
                             user = FirebaseAuth.getInstance().getCurrentUser();
                             adapter.addItem(new PostInfo(Title, DDay, startDate, DueDate, Team, NumPerson, MaxNum, Link, filename));
 
-                        //adapter
-//                        adapter = new PostAdapter(getActivity().Postview, postInfoList);
                         //set adapter to recyclerview
                         recyclerView.setAdapter(adapter);
                     }
