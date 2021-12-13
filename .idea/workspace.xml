@@ -15,303 +15,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0060de86-bf0b-4f68-bba4-5ea6fddba45e" name="Default Changelist" comment="CREATE SettingActivity FEAT Setting, Reset PW, Logout, Remove user">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tmi/SettingActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.documentfile/documentfile/1.0.0/66104345c90cd8c2fd5ad2d3aad692b280e10c32/documentfile-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.documentfile/documentfile/1.0.0/8cb912559da493946f05d1b5aa17a4b409a3e6eb/documentfile-1.0.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.documentfile/documentfile/1.0.0/a1bed5cf96db96bd06a2feade98fe55653811dc8/documentfile-1.0.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.print/print/1.0.0/71fc2d9acf7cce6b96230c5af263268b1664914a/print-1.0.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.print/print/1.0.0/7722094652c48ebe27acc94d74a55e759e4635ff/print-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.print/print/1.0.0/f0031001c95427f3e6a85661f5c3560131ef8145/print-1.0.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-core/3.3.0/1b378d81de64c2e4740b0856c4ed65c1b76ea1b2/espresso-core-3.3.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-core/3.3.0/48261fce30cd47bb2e4d9328224f71a6c4d7e727/espresso-core-3.3.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-core/3.3.0/56507169a1ae371248479584d462cd9908fe9b2c/espresso-core-3.3.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-core/3.3.0/8da4ff80a40b70b852341a5ad99c943811400eec/espresso-core-3.3.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-idling-resource/3.3.0/aa2839a4e1fcee6a91d3300bffd23e990d78f37/espresso-idling-resource-3.3.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-idling-resource/3.3.0/ac774bb29e6171578dc7508bf390a4a3ccbedfea/espresso-idling-resource-3.3.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-idling-resource/3.3.0/d3266070b06a37a3a79026e10f95f819b539db44/espresso-idling-resource-3.3.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.espresso/espresso-idling-resource/3.3.0/ee0f3ffdd7782d68dbe1eafa9337872817cb299e/espresso-idling-resource-3.3.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2/15f9a86b0561704679b12d5308cdc07d7813e8d3/junit-1.1.2.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2/81eaaddc678aad44bd3da3e43fc4f80a0df6bdf/junit-1.1.2.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2/c69cad63303f01767122a49e379c6121d6721a0b/junit-1.1.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2/d8ceef67c64321bbf484dc5997a1d2efa319bed7/junit-1.1.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/core/1.3.0/3d046283a0729cb2d5dacdd9b3f8b62203052da5/core-1.3.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/core/1.3.0/6a4efdcd3d142f684e71697be281efd57fd21d5e/core-1.3.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/core/1.3.0/b6791e9c1d8c38a366d86285498948d3ee567a74/core-1.3.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/core/1.3.0/cab982e254e02674aa7a46e3086986cddd50ca06/core-1.3.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/monitor/1.3.0/3a80466a460e22ec785a9c0ad1a1cbaf6a08c0ee/monitor-1.3.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/monitor/1.3.0/3e9cdaa5216fe58f8780e2f19a23aebf2cc8620a/monitor-1.3.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/monitor/1.3.0/42fd8fe34ba94b2e75f5df0b3184887af6f98670/monitor-1.3.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/monitor/1.3.0/60a29f8cfadc1a8e841d96dad42483d681130a9c/monitor-1.3.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/runner/1.3.0/506c97f735db13fda1943c4eb95f2ccfc7b457e0/runner-1.3.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/runner/1.3.0/a3733b82170ff8f6bcc594791627c2aaa8d6a247/runner-1.3.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/runner/1.3.0/c0fd1f1e715bfa4777ae6a679444f7471205ee7c/runner-1.3.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/androidx.test/runner/1.3.0/e8862a8d71f5a8ab90d822b7d9349c7e4e74e49b/runner-1.3.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aapt2-proto/7.0.3-7396180/2f8786806f3275207400c475b6ee39ab1dba5974/aapt2-proto-7.0.3-7396180-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aapt2-proto/7.0.3-7396180/90f00bef198e95b0167215b3a4c98000425ceef9/aapt2-proto-7.0.3-7396180.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aapt2-proto/7.0.3-7396180/c196dae88588a877950a383912ed6c0cfdbc1a10/aapt2-proto-7.0.3-7396180.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aapt2-proto/7.0.3-7396180/e5f91db5cd4d0a211605c4025cc5ee3583bf1798/aapt2-proto-7.0.3-7396180.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aaptcompiler/7.0.3/488debdc27d063a0581a503af9e89619abd6c560/aaptcompiler-7.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aaptcompiler/7.0.3/6a31746f598d3196c49e7d605fd1d04f493ebcfe/aaptcompiler-7.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aaptcompiler/7.0.3/aacc3a87da0e7e9bd994cd0dfbd3e1448e94e50f/aaptcompiler-7.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/aaptcompiler/7.0.3/b1b3240d6857fed602ec7ca9222b7281327f5614/aaptcompiler-7.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/7.0.3/2914453af2fc0580b4d2fe77ad42994f93f16247/builder-test-api-7.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/7.0.3/52562365961ea2631c176474caef531d21a1a992/builder-test-api-7.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/7.0.3/7e2d760c624401268794fc69a604c6fbb6670283/builder-test-api-7.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/7.0.3/eb227e8d7badccfc53e17da931c87f633fd0917b/builder-test-api-7.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder/7.0.3/79678b0e96d0d43940eaa848a747b36418485e23/builder-7.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder/7.0.3/80b5d1627fcc00f5aed663d629e985495bd37d9a/builder-7.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder/7.0.3/a85b07a3ae449fb8396cb76b864780beb7b60858/builder-7.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/builder/7.0.3/cd51396c619125482eb32ef28c7d770d42eca1e6/builder-7.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle-api/7.0.3/9383b47e124adc961dc0bc779aec5acfc736589b/gradle-api-7.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle-api/7.0.3/ac920489d2c4be1cd93bbd75648a7f3a491df4f0/gradle-api-7.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle-api/7.0.3/aefa653cd6aba6b4a2bb9febca9810cabb4c7d3b/gradle-api-7.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle-api/7.0.3/d56a58949affef56d2b177f86b94df8434225966/gradle-api-7.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle/7.0.3/90cbb46c2ce484cb4f6cf4fd3e7898938a7bdfa8/gradle-7.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle/7.0.3/a8359caa6caff41a37b4148c130716753eac3e83/gradle-7.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle/7.0.3/d26689d255d877e5643c6a473b9400a1d99966e/gradle-7.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.build/gradle/7.0.3/d88456023825918ae55c731a639bdff848d04df2/gradle-7.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/30.0.3/12ad24320a209e3ace0681efa051086e648d4d7d/ddmlib-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/30.0.3/26687e5f39dfb2cc0a45342d547b0aec0f405ebf/ddmlib-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/30.0.3/54587f542c592338584a99299cd630d801f7dad9/ddmlib-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/30.0.3/f0c6fd442148165bbbb6f76708c96f688a15870/ddmlib-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.lint/lint-model/30.0.3/13737e607c8b278a8ae24c37c3802276bdf51e7a/lint-model-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.lint/lint-model/30.0.3/2d0b95e0bab6d8eaa5b6a5bede02ea0b349bcfd7/lint-model-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.lint/lint-model/30.0.3/94f6be91f8f0273eefa65dc4d941fa793f7f01ed/lint-model-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools.lint/lint-model/30.0.3/aecb551a676ba64ac1195bdee2edafcfb00aad7c/lint-model-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/annotations/30.0.3/265827fa6af2c46a77d8b60c9b786c30bdd91ba1/annotations-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/annotations/30.0.3/2e89b5ac7315022ffb5a817d35a4afe173c09cc6/annotations-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/annotations/30.0.3/30e4df8ce17875ed84265f67680aaec603d6dfc0/annotations-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/annotations/30.0.3/da9d6b35222be69145f636d87824c6923e0f3986/annotations-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/common/30.0.3/4bf25a3071010d211865e3b744014b7122215dfe/common-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/common/30.0.3/69ef2d47e04aa0b49a43aa6282d614b26a360466/common-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/common/30.0.3/afeed1a5ea152b4ae581b19e788a0f0ec2a8d82a/common-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/common/30.0.3/be918cb715b11ba61d17b113f5fb37489b4d0977/common-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/dvlib/30.0.3/3910de6ed8224477b6d48dbdcbd7f6da4b4e9983/dvlib-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/dvlib/30.0.3/6df652b50e17f2d4127e2b8f6055f86988518435/dvlib-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/dvlib/30.0.3/b87a3bd793367d30e4bf9e4b00869e72c8a3a09b/dvlib-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/dvlib/30.0.3/df07783f436b4f0c03d6b014ecf39398288017b6/dvlib-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/repository/30.0.3/189ccadae76bf997ed09f9d964066d1d7e09350c/repository-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/repository/30.0.3/34bd6fa81437445743a6fef7c8873f4f7984eb5a/repository-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/repository/30.0.3/9ebe7acdd4f50a2fe4d52a71b02058700f8fd1af/repository-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/repository/30.0.3/de8f47a542575060c82385e95688fa697d75217d/repository-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdk-common/30.0.3/3504a8fec2987cd926a0e8ad8ca289beec5d71ff/sdk-common-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdk-common/30.0.3/373e0a50650f21d2df959709934b16ae34669fcd/sdk-common-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdk-common/30.0.3/6a00b95e3403db055e008cec37a66a7c5ffba668/sdk-common-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdk-common/30.0.3/9d9721b5406bcf1555a418d898c65b38ce551c4d/sdk-common-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdklib/30.0.3/8a6fa9c68231a573f749103cd3827d573b66ba33/sdklib-30.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdklib/30.0.3/b24fd23a742b392b8442963b1468aaa9970553b9/sdklib-30.0.3.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdklib/30.0.3/c83c48498f64fa7c9583da8202791e2ba0eaa447/sdklib-30.0.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.android.tools/sdklib/30.0.3/ecd110d86ef284a66af7835f4b6e2168a28c2f2d/sdklib-30.0.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.google.gms/google-services/4.3.10/3372c6468607c4dccf127ab33ee77b18a51689cc/google-services-4.3.10.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.google.gms/google-services/4.3.10/b21fa51458d644f4eb426f1d483f40775c28c15/google-services-4.3.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.google.gms/google-services/4.3.10/c49afdf68a6f622c546cea5a8f56995fd21ac6e5/google-services-4.3.10-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.google.gms/google-services/4.3.10/d523093f3ba676681a186d637e31db32e9ac15c1/google-services-4.3.10.module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javapoet/1.10.0/111612d623e9d2047798f13324fcb29966f080e3/javapoet-1.10.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javapoet/1.10.0/59bdf07dc7cf5325a95ddb8366f673df0d127bc2/javapoet-1.10.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javapoet/1.10.0/712c178d35185d8261295913c9f2a7d6867a6007/javapoet-1.10.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/5b31387d839a5cdaf5b6de3990da01f7f2b963c5/javawriter-2.1.1-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/67ff45d9ae02e583d0f9b3432a5ebbe05c30c966/javawriter-2.1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/96cec80cd5523edeb350e3aaede11430cef7be55/javawriter-2.1.1.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/f591a105db78771d0a1e7a277b3747556c528c22/javawriter-2.1.1-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javawriter/2.5.0/1b2a0925ff06220c0261b6fd468183cd9e9a9a47/javawriter-2.5.0-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javawriter/2.5.0/81241ff7078ef14f42ea2a8995fa09c096256e6b/javawriter-2.5.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/com.squareup/javawriter/2.5.0/d932f2476f65ecd95dcd6fd8c568b3f466f6a482/javawriter-2.5.0.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/javax.inject/javax.inject/1/70ec961c25111ed9015d1af77772d96383c2d238/javax.inject-1-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/javax.inject/javax.inject/1/a00123f261762a7c5e0ec916a2c7c8298d29c400/javax.inject-1-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/javax.inject/javax.inject/1/b8e00a8a0deb0ebef447570e37ff8146ccd92cbe/javax.inject-1.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.12/35fb238baee3f3af739074d723279ebea2028398/junit-4.12.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.12/941a8be4506c65f0a9001c08812fb7da1e505e21/junit-4.12-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.13.2/33987872a811fe4d4001ed494b07854822257f42/junit-4.13.2-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.13.2/73bc5be628edeb297a1caf421a5a2e494798b92f/junit-4.13.2.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.13.2/8ac9e16d933b6fb43bc7f576336b8f4d7eb5ba12/junit-4.13.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/junit/junit/4.13.2/f2f3f384dacd2ade2ddf7aa7e0f4360dfee38672/junit-4.13.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest-core-1.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/872e413497b906e7c9fa85ccc96046c5d1ef7ece/hamcrest-core-1.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/ad09811315f1d4f5756986575b0ea16b99cd686f/hamcrest-core-1.3-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/5de0c73fef18917cd85d0ab70bb23818685e4dfd/hamcrest-integration-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/6175ef91dd87a6d909f7442f0a421acd227996b9/hamcrest-integration-1.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/ae7787a563e6a1b1f17fd4ac43be3a3c8830cfda/hamcrest-integration-1.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/cc5884d4138d3376f574f6a3992acceedfc37bea/hamcrest-integration-1.3-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4324046c5f99f3dc91b5370899fa3ae65fd137d2/hamcrest-library-1.3-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/47a7ee46628ab7133129cd7cef1e92657bc275e/hamcrest-library-1.3-sources.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/8e2a1dd4d5ba590c7a904209f1f40f66d9349ee9/hamcrest-library-1.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/modules-2/files-2.1/org.hamcrest/hamcrest-parent/1.3/80391bd32bfa4837a15215d5e9f07c60555c379a/hamcrest-parent-1.3.pom" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/085440b3590fbb680b57991537a193ba/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/085440b3590fbb680b57991537a193ba/transformed/runner-1.3.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/085440b3590fbb680b57991537a193ba/transformed/runner-1.3.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/085440b3590fbb680b57991537a193ba/transformed/runner-1.3.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/085440b3590fbb680b57991537a193ba/transformed/runner-1.3.0/proguard.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/0d32d35274e9316f6cb3cc28abf26edd/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/0d32d35274e9316f6cb3cc28abf26edd/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/0d32d35274e9316f6cb3cc28abf26edd/transformed/jetified-grpc-android-1.41.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/0d32d35274e9316f6cb3cc28abf26edd/transformed/jetified-grpc-android-1.41.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/0d32d35274e9316f6cb3cc28abf26edd/transformed/jetified-grpc-android-1.41.0/proguard.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/annotations.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/3c4cdcd2e9f2910d703350965f49f5be/transformed/print-1.0.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/48e149131cc74f3c95f1668bebf34d3e/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/48e149131cc74f3c95f1668bebf34d3e/transformed/espresso-idling-resource-3.3.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/48e149131cc74f3c95f1668bebf34d3e/transformed/espresso-idling-resource-3.3.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/48e149131cc74f3c95f1668bebf34d3e/transformed/espresso-idling-resource-3.3.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/586c858fbcfb27e503c2838ccd5a5c04/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/586c858fbcfb27e503c2838ccd5a5c04/transformed/fragment-1.1.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/586c858fbcfb27e503c2838ccd5a5c04/transformed/fragment-1.1.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/586c858fbcfb27e503c2838ccd5a5c04/transformed/fragment-1.1.0/annotations.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/586c858fbcfb27e503c2838ccd5a5c04/transformed/fragment-1.1.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5a3ff3c7b13dce1983e4f5207d302fbd/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5a3ff3c7b13dce1983e4f5207d302fbd/transformed/jetified-core-1.3.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5a3ff3c7b13dce1983e4f5207d302fbd/transformed/jetified-core-1.3.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5a3ff3c7b13dce1983e4f5207d302fbd/transformed/jetified-core-1.3.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5ce3748d47ecada5a3241a5b48b848b6/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5ce3748d47ecada5a3241a5b48b848b6/transformed/jetified-junit-1.1.2/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5ce3748d47ecada5a3241a5b48b848b6/transformed/jetified-junit-1.1.2/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/5ce3748d47ecada5a3241a5b48b848b6/transformed/jetified-junit-1.1.2/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/774317917b5e0d3be1c72e1644db06c4/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/774317917b5e0d3be1c72e1644db06c4/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/774317917b5e0d3be1c72e1644db06c4/transformed/jetified-savedstate-1.0.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/774317917b5e0d3be1c72e1644db06c4/transformed/jetified-savedstate-1.0.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/774317917b5e0d3be1c72e1644db06c4/transformed/jetified-savedstate-1.0.0/proguard.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/7ffe4246977594fb4a9b6697a06b326e/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/7ffe4246977594fb4a9b6697a06b326e/transformed/documentfile-1.0.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/7ffe4246977594fb4a9b6697a06b326e/transformed/documentfile-1.0.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/7ffe4246977594fb4a9b6697a06b326e/transformed/documentfile-1.0.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/97c9b5d86fced5e6f7a4cbd2f94853b9/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/97c9b5d86fced5e6f7a4cbd2f94853b9/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/97c9b5d86fced5e6f7a4cbd2f94853b9/transformed/jetified-protolite-well-known-types-18.0.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/97c9b5d86fced5e6f7a4cbd2f94853b9/transformed/jetified-protolite-well-known-types-18.0.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/97c9b5d86fced5e6f7a4cbd2f94853b9/transformed/jetified-protolite-well-known-types-18.0.0/proguard.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/97c9b5d86fced5e6f7a4cbd2f94853b9/transformed/jetified-protolite-well-known-types-18.0.0/third_party_licenses.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/97c9b5d86fced5e6f7a4cbd2f94853b9/transformed/jetified-protolite-well-known-types-18.0.0/third_party_licenses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/a655149eba17bc37ec2781da89c19443/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/a655149eba17bc37ec2781da89c19443/transformed/lifecycle-runtime-2.1.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/a655149eba17bc37ec2781da89c19443/transformed/lifecycle-runtime-2.1.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/a655149eba17bc37ec2781da89c19443/transformed/lifecycle-runtime-2.1.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/a655149eba17bc37ec2781da89c19443/transformed/lifecycle-runtime-2.1.0/proguard.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/b2b94dc52fb0c94d4f8dd1e04748a687/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/b2b94dc52fb0c94d4f8dd1e04748a687/transformed/lifecycle-livedata-core-2.4.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/b2b94dc52fb0c94d4f8dd1e04748a687/transformed/lifecycle-livedata-core-2.4.0/META-INF/com/android/build/gradle/aar-metadata.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/b2b94dc52fb0c94d4f8dd1e04748a687/transformed/lifecycle-livedata-core-2.4.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/b2b94dc52fb0c94d4f8dd1e04748a687/transformed/lifecycle-livedata-core-2.4.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/b2b94dc52fb0c94d4f8dd1e04748a687/transformed/lifecycle-livedata-core-2.4.0/public.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/b2b94dc52fb0c94d4f8dd1e04748a687/transformed/lifecycle-livedata-core-2.4.0/res/values/values.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/bbe4c718ef8b44fcb5d68674054c9f29/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/bbe4c718ef8b44fcb5d68674054c9f29/transformed/espresso-core-3.3.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/bbe4c718ef8b44fcb5d68674054c9f29/transformed/espresso-core-3.3.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/bbe4c718ef8b44fcb5d68674054c9f29/transformed/espresso-core-3.3.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/bbe4c718ef8b44fcb5d68674054c9f29/transformed/espresso-core-3.3.0/proguard.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/cb9d746eef87e5fa99ae6478df58a7af/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/cb9d746eef87e5fa99ae6478df58a7af/transformed/jetified-activity-1.0.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/cb9d746eef87e5fa99ae6478df58a7af/transformed/jetified-activity-1.0.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/cb9d746eef87e5fa99ae6478df58a7af/transformed/jetified-activity-1.0.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/df3830d00bff4496a94637bfa10caff2/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/df3830d00bff4496a94637bfa10caff2/transformed/monitor-1.3.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/df3830d00bff4496a94637bfa10caff2/transformed/monitor-1.3.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/df3830d00bff4496a94637bfa10caff2/transformed/monitor-1.3.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/df3830d00bff4496a94637bfa10caff2/transformed/monitor-1.3.0/proguard.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/e48666afaef4229291498f06f5b7dd91/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/e48666afaef4229291498f06f5b7dd91/transformed/core-runtime-2.1.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/e48666afaef4229291498f06f5b7dd91/transformed/core-runtime-2.1.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/e48666afaef4229291498f06f5b7dd91/transformed/core-runtime-2.1.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/f33bcb2f5c49a496470aa54ba8b02aa6/results.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/f33bcb2f5c49a496470aa54ba8b02aa6/transformed/jetified-annotation-experimental-1.0.0/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/f33bcb2f5c49a496470aa54ba8b02aa6/transformed/jetified-annotation-experimental-1.0.0/R.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/f33bcb2f5c49a496470aa54ba8b02aa6/transformed/jetified-annotation-experimental-1.0.0/jars/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/caches/transforms-3/f33bcb2f5c49a496470aa54ba8b02aa6/transformed/jetified-annotation-experimental-1.0.0/jars/lint.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wrapper/dists/gradle-7.0.2-bin/857tjihv64xamwrf0h14cai3r/gradle-7.0.2-bin.zip.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_browser_browser_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_4_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_7_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_19_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_api_phone_17_4_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_base_17_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_17_5_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_5_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_safetynet_17_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_2_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_3_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_annotations_16_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_appcheck_interop_16_0_0_beta02_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_21_0_1_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_20_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_20_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_components_17_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_20_0_2_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_collection_18_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/TMI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/TMI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/TMI.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/TMI.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tmi/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tmi/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tmi/StartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tmi/StartActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tmi/fragments/FavoriteFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tmi/fragments/FavoriteFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -319,30 +42,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\user\.android\avd\Pixel_4_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\HOME\.android\avd\Pixel_2_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
         <option value="Class" />
-        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -350,7 +60,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="217yQSLeibd241JLbtpdC46bNpz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -361,8 +71,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -427,7 +137,9 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
