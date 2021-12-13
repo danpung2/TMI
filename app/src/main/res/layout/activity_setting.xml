@@ -33,16 +33,6 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/scrap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="40dp"
-        android:background="#00ff0000"
-        android:text="스크랩"
-        android:textColor="@color/black" />
-
-    <Button
         android:id="@+id/change_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -42,7 +42,6 @@ public class SettingActivity extends AppCompatActivity {
         TextView user_email = findViewById(R.id.user_email);
         user_email.setText(email);
 
-        Button scrap = findViewById(R.id.scrap);
         Button change_pw = findViewById(R.id.change_pw);
         Button logout = findViewById(R.id.logout);
         Button remove = findViewById(R.id.remove);
