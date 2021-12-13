@@ -97,14 +97,25 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 }
             });
 
+            user = FirebaseAuth.getInstance().getCurrentUser();
             iv_heart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    user = FirebaseAuth.getInstance().getCurrentUser();
-                    //공모전 스크랩
-                    iv_heart.setImageResource(R.drawable.baseline_favorite_24);
-                    db.collection("Users").document(user.getUid())
-                            .update("HeartList", FieldValue.arrayUnion(item.getTitle()));
+                    heart_clicked = !heart_clicked;
+                    if(heart_clicked){
+                        iv_heart.setImageResource(R.drawable.baseline_favorite_border_24);
+
+                        db.collection("Users").document(user.getUid())
+                                .update("userlist_heart", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
+                    }
+                    else{
+                        iv_heart.setImageResource(R.drawable.baseline_favorite_24);
+
+                        db.collection("Users").document(user.getUid())
+                                .update("HeartList", FieldValue.arrayUnion(item.getTitle())); //파이어스토어에 추가
+                    }
+
+
                 }
             });
 
