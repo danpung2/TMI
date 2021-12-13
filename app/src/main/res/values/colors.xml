@@ -6,6 +6,7 @@
     <color name="dark_gray">#FF222222</color>
     <color name="light_gray">#FFAAAAAA</color>
     <color name="light_light_gray">#FFEEEEEE</color>
+    <color name="transparent">#00FFFFFF</color>
 
     <color name="logo_cobalt_blue">#FF004E96</color>
     <color name="logo_orange">#FFFCAF17</color>

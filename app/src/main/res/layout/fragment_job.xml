@@ -6,12 +6,10 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/textView3"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="ability fragment" />
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:nestedScrollingEnabled="false" />
 </LinearLayout>

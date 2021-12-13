@@ -14,19 +14,16 @@ public class PostInfo {
     private String Link;
     private String Image_Link;
 
-    public PostInfo(String Title, String First_category, String DDay, String Second_category, String StartDate, String DueDate, String Team,
-                    String NumPerson, String MaxNum, String Link, String Image_Link, String filename){
+    public PostInfo(String Title, String DDay, String StartDate, String DueDate, String Team,
+                    String NumPerson, String MaxNum, String Link, String filename){
         this.Title = Title;
-        this.First_category = First_category;
         this.DDay = DDay;
-        this.Second_category = Second_category;
         this.StartDate = StartDate;
         this.DueDate = DueDate;
         this.Team = Team;
         this.NumPerson = NumPerson;
         this.MaxNum = MaxNum;
         this.Link = Link;
-        this.Image_Link = Image_Link;
         this.filename = filename;
     }
 

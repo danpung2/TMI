@@ -1,7 +1,5 @@
 package com.example.tmi.fragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.net.Uri;
@@ -20,29 +18,29 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.tmi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     ArrayList<PostInfo> items = new ArrayList<PostInfo>();
-    private static final String TAG = "FeedAdapter";
+    private static final String TAG = "PostAdapter";
     ImageButton heart;
     ArrayList userlist_heart;
     Boolean heart_clicked = false;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     @NonNull
     @Override
@@ -111,15 +109,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
             });
 
+
             /*공모전 이미지 불러오기*/
-            imageView.setBackground(new ShapeDrawable(new OvalShape()));
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                imageView.setClipToOutline(true);
-            }
             //FirebaseStorage 인스턴스를 생성
             FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
             // 위의 저장소를 참조하는 파일명으로 지정
-            StorageReference storageReference = firebaseStorage.getReferenceFromUrl("gs://gachon--tmi.appspot.com" + item.getTitle() + ".png");
+            StorageReference storageReference = firebaseStorage.getReferenceFromUrl("gs://gachon--tmi.appspot.com/images/" + item.getFilename());
             //StorageReference에서 파일 다운로드 URL 가져옴
             storageReference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
