@@ -9,9 +9,6 @@
     app:cardUseCompatPadding="true"
     app:contentPadding="5dp">
 
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +47,7 @@
 
 
                 <ImageView
-                    android:id="@+id/heart"
+                    android:id="@+id/iv_heart"
                     android:layout_gravity="right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -58,7 +55,7 @@
                     app:srcCompat="@drawable/baseline_favorite_border_24" />
 
                 <TextView
-                    android:id="@+id/date"
+                    android:id="@+id/tv_Date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/light_gray"
@@ -66,7 +63,7 @@
                     android:text="날짜" />
 
                 <TextView
-                    android:id="@+id/title"
+                    android:id="@+id/tv_Title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/dark_gray"
