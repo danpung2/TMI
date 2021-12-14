@@ -69,11 +69,11 @@ public class ScrapFragment extends Fragment {
             public void onSuccess(DocumentSnapshot document) {
 
                 // 배열에 저장된 HeartList 제목을 가져온다.
-                List<String> group = (List<String>) document.get("HeartList");
 
-                //스크랩한 공모전이 존재하면
-                if(!group.isEmpty()) {
+                try {
+                    List<String> group = (List<String>) document.get("HeartList");
 
+                    //스크랩한 공모전이 존재하면
                     for (String title : group) {
 
                         /* HeartList와 이름과 Exhibitions의 제목 서치하여 생성 */
@@ -105,8 +105,12 @@ public class ScrapFragment extends Fragment {
                                 }
                             }
                         });
+
                     }
+                } catch (NullPointerException e){
+                    e.printStackTrace();
                 }
+
             }
         });
     };
