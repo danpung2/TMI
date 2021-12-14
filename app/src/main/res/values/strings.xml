@@ -11,6 +11,7 @@
     <string name="password">비밀번호</string>
     <string name="password_confirm">비밀번호 확인</string>
     <string name="find_password">비밀번호를 잊어버리셨나요?</string>
+    <string name="login_failed">로그인에 실패했습니다.</string>
     <string name="search_hint">검색어를 입력하세요</string>
     <string name="no_data">결과가 없습니다.</string>
     <string name="exit">종료하시겠습니까?</string>

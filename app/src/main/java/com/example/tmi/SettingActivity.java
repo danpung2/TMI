@@ -27,9 +27,10 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        setContentView(R.layout.activity_splash);
 
 
-        moveToStart = new Intent(this, StartActivity.class);
+        moveToStart = new Intent(this, SplashActivity.class);
 
         if(user != null){
             email = user.getEmail();

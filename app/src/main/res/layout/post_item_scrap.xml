@@ -42,6 +42,23 @@
                     android:textColor="@color/gray"
                     android:textSize="14sp" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+
+                        android:id="@+id/tv_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@color/transparent"
+                        app:srcCompat="@drawable/baseline_close_24" />
+                </LinearLayout>
+
             </LinearLayout>
 
 
@@ -60,17 +77,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-
-                <ImageButton
-
-                    android:id="@+id/iv_heart"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:tint="@color/heart_red"
-                    android:background="@color/transparent"
-                    app:srcCompat="@drawable/baseline_favorite_border_24" />
 
                     <TextView
                         android:id="@+id/tv_maximum"
