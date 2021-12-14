@@ -82,15 +82,15 @@ public class ScrapFragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot document) {
 
-                // 배열에 저장된 HeartList 제목을 가져온다.
+                // 배열에 저장된 searchList 제목을 가져온다.
 
                 try {
-                    List<String> group = (List<String>) document.get("HeartList");
+                    List<String> group = (List<String>) document.get("scrapList");
 
                     //스크랩한 공모전이 존재하면
                     for (String title : group) {
 
-                        /* HeartList와 이름과 Exhibitions의 제목 서치하여 생성 */
+                        /* searchList 이름과 Exhibitions의 제목 서치하여 생성 */
                         db.collection("Exhibitions").whereEqualTo("Title", title).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {

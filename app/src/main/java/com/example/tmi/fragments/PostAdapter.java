@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.tmi.MainActivity;
 import com.example.tmi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -62,7 +61,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        ImageView iv_heart;
+        ImageView iv_scrap;
         TextView tv_Dday;
         TextView tv_Date;
         TextView tv_Title;
@@ -73,7 +72,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             super(itemView);
             tv_Dday = (TextView) itemView.findViewById(R.id.tv_Dday);
             imageView = itemView.findViewById(R.id.imageView);
-            iv_heart = itemView.findViewById(R.id.iv_heart);
+            iv_scrap = itemView.findViewById(R.id.iv_scrap);
             tv_Date = (TextView) itemView.findViewById(R.id.tv_Date);
             tv_Title = (TextView) itemView.findViewById(R.id.tv_Title);
             tv_Team = (TextView) itemView.findViewById(R.id.tv_team);
@@ -104,12 +103,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             });
 
             user = FirebaseAuth.getInstance().getCurrentUser();
-            iv_heart.setOnClickListener(new View.OnClickListener() {
+            iv_scrap.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                     db.collection("Users").document(user.getUid())
-                            .update("HeartList", FieldValue.arrayUnion(item.getTitle())); //파이어스토어에 추가
+                            .update("scrapList", FieldValue.arrayUnion(item.getTitle())); //파이어스토어에 추가
                     Toast.makeText(context, "스크랩이 완료됐습니다", Toast.LENGTH_SHORT).show();
                 }
             });

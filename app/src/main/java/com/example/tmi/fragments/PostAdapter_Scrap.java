@@ -60,7 +60,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        ImageView iv_heart;
+        ImageView tv_Delete;
         TextView tv_Dday;
         TextView tv_Date;
         TextView tv_Title;
@@ -71,7 +71,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
             super(itemView);
             tv_Dday = (TextView) itemView.findViewById(R.id.tv_Dday);
             imageView = itemView.findViewById(R.id.imageView);
-            iv_heart = itemView.findViewById(R.id.iv_heart);
+            tv_Delete = itemView.findViewById(R.id.tv_delete);
             tv_Date = (TextView) itemView.findViewById(R.id.tv_Date);
             tv_Title = (TextView) itemView.findViewById(R.id.tv_Title);
             tv_Team = (TextView) itemView.findViewById(R.id.tv_team);
@@ -102,13 +102,13 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
             });
 
             user = FirebaseAuth.getInstance().getCurrentUser();
-            iv_heart.setOnClickListener(new View.OnClickListener() {
+            tv_Delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                     db.collection("Users").document(user.getUid())
-                            .update("HeartList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
-                    Toast.makeText(context, "스크랩이 취소되었습니다", Toast.LENGTH_SHORT).show();
+                            .update("scrapList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
+                    Toast.makeText(context, "스크랩에서 삭제하였습니다", Toast.LENGTH_SHORT).show();
 
                 }
             });
