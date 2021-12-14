@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         searchView = findViewById(R.id.search_view);
-
+        searchView.setSubmitButtonEnabled(true);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
