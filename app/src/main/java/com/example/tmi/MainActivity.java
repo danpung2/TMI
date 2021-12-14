@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private SearchView searchView;
     private ImageButton setting;
+    private  VPAdapter vpAdapter;
+    public String UserUid;
 
 
     @Override
@@ -60,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         String txt_favorite = getString(R.string.tab_scrap);
         String txt_deadline = getString(R.string.tab_deadline);
         String txt_popular = getString(R.string.tab_popular);
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
         tabLayout.setupWithViewPager(viewPager);
 
-        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         vpAdapter.addFragment(new ScrapFragment(), txt_favorite);
         vpAdapter.addFragment(new LatestFragment(), txt_latest);
         vpAdapter.addFragment(new PopularFragment(), txt_popular);
@@ -83,21 +82,17 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(vpAdapter);
 
 
-        new Thread(() -> {
-            ContestCrawler crawler = new ContestCrawler();
-            try {
-                crawler.LoadExhibition();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }).start();
-
-
-
 
 //        SaveInfo saveInfo = new SaveInfo(crawler.Title, crawler.First_category, crawler.DDay, crawler.Second_category, crawler.StartDate, crawler.DueDate,
 //                crawler.Team, crawler.NumPerson, crawler.MaxNum, crawler.Link,crawler.Image_Link);
 //        saveInfo.infoUpload();
 
     }
+
+
+    public void refresh(){
+        vpAdapter.notifyDataSetChanged();
+
+    }
+
 }
