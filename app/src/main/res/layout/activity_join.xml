@@ -3,29 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".JoinActivity"
-    android:orientation="vertical"
-    >
+    android:layout_margin="50dp"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/info"
+        android:id="@+id/tv_join"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:text="회원가입"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/join"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp" />
 
     <EditText
-        android:id="@+id/email"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:padding="10dp"
         android:layout_marginTop="100dp"
         android:layout_margin="5dp"
         android:background="@color/white"
-        android:hint="이메일"
+        android:hint="@string/email"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:ems="10"
@@ -33,28 +36,30 @@
 
 
     <EditText
-        android:id="@+id/password"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:padding="10dp"
         android:layout_margin="5dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="비밀번호"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textSize="20sp" />
+
 
     <Button
         android:id="@+id/joinBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:background="@color/white"
-        android:text="회원가입"
+        android:layout_margin="5dp"
+        android:text="@string/join"
+        android:backgroundTint="@color/cobalt_blue_next"
         android:textColor="@color/black"
-        android:textSize="20sp" />
-
+        android:textSize="20sp"
+        app:queryBackground="@drawable/round" />
 
 </LinearLayout>

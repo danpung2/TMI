@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        EditText email = findViewById(R.id.email);
-        EditText password = findViewById(R.id.password);
+        EditText email = findViewById(R.id.tv_email);
+        EditText password = findViewById(R.id.tv_password);
 
         Button findPWBtn = findViewById(R.id.findPWBtn);
         findPWBtn.setOnClickListener(v -> {
@@ -78,8 +78,4 @@ public class LoginActivity extends AppCompatActivity {
         // [END sign_in_with_email]
     }
 
-    private void startMainActivity(){
-        Intent intent = new Intent (this, MainActivity.class);
-        startActivity(intent);
-    }
 }

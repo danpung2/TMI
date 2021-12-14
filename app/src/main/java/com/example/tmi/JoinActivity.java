@@ -36,8 +36,8 @@ public class JoinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join);
         mAuth = FirebaseAuth.getInstance();
 
-        EditText email = findViewById(R.id.email);
-        EditText password = findViewById(R.id.password);
+        EditText email = findViewById(R.id.tv_email);
+        EditText password = findViewById(R.id.tv_password);
 
         moveToLogin = new Intent(this, LoginActivity.class);
 
