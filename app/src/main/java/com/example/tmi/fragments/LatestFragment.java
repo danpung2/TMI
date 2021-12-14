@@ -37,7 +37,7 @@ public class LatestFragment extends Fragment {
         recyclerView = (RecyclerView)layout.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        PostAdapter adapter = new PostAdapter();
+        PostAdapter adapter = new PostAdapter(getContext());
 
         showData(adapter);
 

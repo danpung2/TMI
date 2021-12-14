@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private SearchView searchView;
     private ImageButton setting;
-    TextView textView_test;
 
 
     @Override

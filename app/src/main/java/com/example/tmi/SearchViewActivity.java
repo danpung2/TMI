@@ -48,7 +48,7 @@ public class SearchViewActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        PostAdapter adapter = new PostAdapter();
+        PostAdapter adapter = new PostAdapter(this);
 
         setVisible = false;
         showData(adapter);

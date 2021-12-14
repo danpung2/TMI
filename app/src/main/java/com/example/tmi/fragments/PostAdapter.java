@@ -2,6 +2,7 @@ package com.example.tmi.fragments;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
@@ -19,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.tmi.MainActivity;
 import com.example.tmi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -42,10 +44,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     ArrayList<PostInfo> items = new ArrayList<PostInfo>();
     private static final String TAG = "PostAdapter";
     private FirebaseUser user;
-    ImageButton heart;
-    ArrayList userlist_heart;
+    private Context context;
     Boolean heart_clicked = false;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    public PostAdapter(Context context) {
+        this.context = context;
+    }
 
 
     @NonNull
@@ -98,6 +103,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) { // 링크 연결
+
+                    int pos = getAdapterPosition() ;
+                    if (pos != RecyclerView.NO_POSITION) {
+
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getItem(pos).getLink()));
+                        context.startActivity(intent);
+                    }
+
 
                 }
             });
