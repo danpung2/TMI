@@ -14,9 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SettingActivity extends AppCompatActivity {
     private Intent moveToStart;
@@ -24,6 +27,7 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
         moveToStart = new Intent(this, StartActivity.class);
 
@@ -99,6 +103,22 @@ public class SettingActivity extends AppCompatActivity {
 
     public void deleteUser(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("Users").document(user.getUid())
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error deleting document", e);
+                    }
+                });
 
         user.delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -114,5 +134,6 @@ public class SettingActivity extends AppCompatActivity {
 
                     }
                 });
+
     }
 }
