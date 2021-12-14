@@ -59,7 +59,6 @@ public class LatestFragment extends Fragment {
             @Override
             public void onRefresh() {
                 ((MainActivity)getActivity()).refresh();
-
                 swipeRefreshLayout.setRefreshing(false);
             }
         });

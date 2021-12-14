@@ -1,18 +1,11 @@
 package com.example.tmi.fragments;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.net.Uri;
-import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,35 +14,27 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.tmi.MainActivity;
 import com.example.tmi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FieldValue;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
+public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.ViewHolder> {
     ArrayList<PostInfo> items = new ArrayList<PostInfo>();
-    private static final String TAG = "PostAdapter";
+    private static final String TAG = "PostAdapter_Scrap";
     private FirebaseUser user;
     private Context context;
     Boolean heart_clicked = false;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public PostAdapter(Context context) {
+    public PostAdapter_Scrap(Context context) {
         this.context = context;
     }
 
@@ -58,7 +43,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-        View itemView = inflater.inflate(R.layout.post_item, viewGroup, false);
+        View itemView = inflater.inflate(R.layout.post_item_scrap, viewGroup, false);
         return new ViewHolder(itemView);
     }
 
@@ -122,8 +107,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 public void onClick(View view) {
 
                     db.collection("Users").document(user.getUid())
-                            .update("HeartList", FieldValue.arrayUnion(item.getTitle())); //파이어스토어에 추가
-                    Toast.makeText(context, "스크랩이 완료됐습니다", Toast.LENGTH_SHORT).show();
+                            .update("HeartList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
+                    Toast.makeText(context, "스크랩이 취소되었습니다", Toast.LENGTH_SHORT).show();
+
                 }
             });
 

@@ -51,7 +51,7 @@ public class ScrapFragment extends Fragment {
         recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        PostAdapter adapter = new PostAdapter(getContext());
+        PostAdapter_Scrap adapter = new PostAdapter_Scrap(getContext());
 
         showData(adapter);
 
@@ -75,7 +75,7 @@ public class ScrapFragment extends Fragment {
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private void showData(PostAdapter adapter){
+    private void showData(PostAdapter_Scrap adapter){
 
         DocumentReference docRef = db.collection("Users").document(user.getUid());
         Task<DocumentSnapshot> documentSnapshotTask = docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
