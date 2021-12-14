@@ -1,5 +1,8 @@
 package com.example.tmi.fragments;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.content.Intent;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.net.Uri;
@@ -43,6 +46,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     ArrayList userlist_heart;
     Boolean heart_clicked = false;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     @NonNull
     @Override
@@ -93,8 +97,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    //링크로 들어가기
+                public void onClick(View view) { // 링크 연결
+
                 }
             });
 
@@ -104,40 +108,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 public void onClick(View view) {
                     heart_clicked = !heart_clicked;
                     if(heart_clicked){
-                        iv_heart.setImageResource(R.drawable.baseline_favorite_border_24);
-
-                        db.collection("Users").document(user.getUid())
-                                .update("HeartList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
-                    }
-                    else{
                         iv_heart.setImageResource(R.drawable.baseline_favorite_24);
 
                         db.collection("Users").document(user.getUid())
                                 .update("HeartList", FieldValue.arrayUnion(item.getTitle())); //파이어스토어에 추가
                     }
+                    else{
 
+                        iv_heart.setImageResource(R.drawable.baseline_favorite_border_24);
 
-                }
-            });
+                        db.collection("Users").document(user.getUid())
+                                .update("HeartList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
 
-            DocumentReference docRef = db.collection("Exhibitions").document(item.getTitle());
-            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot document = task.getResult();
-                        if (document.exists()) {
-                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-
-
-                        } else {
-                            Log.d(TAG, "No such document");
-                        }
-                    } else {
-                        Log.d(TAG, "get failed with ", task.getException());
                     }
-                }
 
+
+                }
             });
 
 
