@@ -1,10 +1,13 @@
 package com.example.tmi;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
@@ -82,11 +85,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(vpAdapter);
 
 
-
-//        SaveInfo saveInfo = new SaveInfo(crawler.Title, crawler.First_category, crawler.DDay, crawler.Second_category, crawler.StartDate, crawler.DueDate,
-//                crawler.Team, crawler.NumPerson, crawler.MaxNum, crawler.Link,crawler.Image_Link);
-//        saveInfo.infoUpload();
-
     }
 
 
@@ -94,5 +92,27 @@ public class MainActivity extends AppCompatActivity {
         vpAdapter.notifyDataSetChanged();
 
     }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alBuilder = new AlertDialog.Builder(this);
+        alBuilder.setMessage(R.string.exit);
+        alBuilder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        alBuilder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                return;
+            }
+        });
+        alBuilder.setTitle("프로그램 종료");
+        alBuilder.show();
+    }
+
 
 }

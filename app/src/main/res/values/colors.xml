@@ -13,4 +13,6 @@
     <color name="logo_orange">#FFFCAF17</color>
     <color name="logo_light_green">#FF7FC241</color>
     <color name="logo_light_blue">#FF00BAF2</color>
+
+    <color name="cobalt_blue_next">#88C7FF</color>
 </resources>

@@ -5,10 +5,14 @@
     <string name="tab_popular">인기순</string>
     <string name="tab_deadline">마감순</string>
     <string name="tab_job">취업</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="login">로그인</string>
+    <string name="join">회원가입</string>
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="password_confirm">비밀번호 확인</string>
+    <string name="find_password">비밀번호를 잊어버리셨나요?</string>
     <string name="search_hint">검색어를 입력하세요</string>
     <string name="no_data">결과가 없습니다.</string>
+    <string name="exit">종료하시겠습니까?</string>
 
 </resources>
