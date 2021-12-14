@@ -14,8 +14,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.tmi.LoginActivity;
+import com.example.tmi.MainActivity;
 import com.example.tmi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,6 +34,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 public class ScrapFragment extends Fragment {
+    private SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
     FirebaseUser user;
 
@@ -39,24 +42,35 @@ public class ScrapFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_scrap, container, false);
+        View view =  inflater.inflate(R.layout.fragment_scrap, container, false);
+
+        swipeRefreshLayout = view.findViewById(R.id.switerfresh);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         //initialize views
-        recyclerView = (RecyclerView)layout.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         PostAdapter adapter = new PostAdapter(getContext());
 
         showData(adapter);
 
-        return layout;
+        return view;
     }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                ((MainActivity)getActivity()).refresh();
+
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
 
