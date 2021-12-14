@@ -81,6 +81,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tv_Title = (TextView) itemView.findViewById(R.id.tv_Title);
             tv_Team = (TextView) itemView.findViewById(R.id.tv_team);
             tv_Maximum = (TextView) itemView.findViewById(R.id.tv_maximum);
+            user = FirebaseAuth.getInstance().getCurrentUser();
         }
 
         public void setItem(PostInfo item) {
@@ -106,7 +107,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                         iv_heart.setImageResource(R.drawable.baseline_favorite_border_24);
 
                         db.collection("Users").document(user.getUid())
-                                .update("userlist_heart", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
+                                .update("HeartList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
                     }
                     else{
                         iv_heart.setImageResource(R.drawable.baseline_favorite_24);

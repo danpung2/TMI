@@ -29,6 +29,8 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.List;
+
 public class ScrapFragment extends Fragment {
     RecyclerView recyclerView;
     FirebaseUser user;
@@ -38,6 +40,7 @@ public class ScrapFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_scrap, container, false);
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         //initialize views
         recyclerView = (RecyclerView)layout.findViewById(R.id.recycler_view);
@@ -45,8 +48,7 @@ public class ScrapFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         PostAdapter adapter = new PostAdapter();
 
-        if(LoginActivity.isLogin)
-            showData(adapter);
+        showData(adapter);
 
         return layout;
     }
@@ -68,42 +70,40 @@ public class ScrapFragment extends Fragment {
 
 
                 // 배열에 저장된 HeartList 제목을 가져온다.
-                String title = document.getString("HeartList");
+                List<String> group = (List<String>) document.get("HeartList");
 
-                // 테스트
-                Toast.makeText(getContext(), "title", Toast.LENGTH_LONG).show();
+                for (String title : group) {
 
+                    /* HeartList와 이름과 Exhibitions의 제목 서치하여 생성 */
+                    db.collection("Exhibitions").whereEqualTo("Title", title).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                //show data
+                                for (DocumentSnapshot doc : task.getResult()) {
 
+                                    String Title = doc.getString("Title");
+                                    String DDay = doc.getString("DDay");
+                                    String startDate = doc.getString("StartDate");
+                                    String DueDate = doc.getString("DueDate");
+                                    String Team = doc.getString("Team");
+                                    String NumPerson = doc.getString("NumPerson");
+                                    String MaxNum = doc.getString("MaxNum");
+                                    String Link = doc.getString("Link");
+                                    String filename = doc.getString("filename");
 
-                /* HeartList와 이름과 Exhibitions의 제목 서치하여 생성 */
-                db.collection("Exhibitions").whereEqualTo("Title", title).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            //show data
-                            for (DocumentSnapshot doc : task.getResult()) {
+                                    user = FirebaseAuth.getInstance().getCurrentUser();
+                                    adapter.addItem(new PostInfo(Title, DDay, startDate, DueDate, Team, NumPerson, MaxNum, Link, filename));
 
-                                String Title = doc.getString("Title");
-                                String DDay = doc.getString("DDay");
-                                String startDate = doc.getString("StartDate");
-                                String DueDate = doc.getString("DueDate");
-                                String Team = doc.getString("Team");
-                                String NumPerson = doc.getString("NumPerson");
-                                String MaxNum = doc.getString("MaxNum");
-                                String Link = doc.getString("Link");
-                                String filename = doc.getString("filename");
-
-                                user = FirebaseAuth.getInstance().getCurrentUser();
-                                adapter.addItem(new PostInfo(Title, DDay, startDate, DueDate, Team, NumPerson, MaxNum, Link, filename));
-
-                                //set adapter to recyclerview
-                                recyclerView.setAdapter(adapter);
+                                    //set adapter to recyclerview
+                                    recyclerView.setAdapter(adapter);
+                                }
+                            } else {
+                                Log.d("TAG", "Error getting documents: ", task.getException());
                             }
-                        } else {
-                            Log.d("TAG", "Error getting documents: ", task.getException());
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     };
