@@ -28,6 +28,7 @@ public class JoinActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String userEmail;
     private Intent moveToLogin;
+    public boolean is_password_confirm = false;
 
 
     @Override
@@ -38,16 +39,30 @@ public class JoinActivity extends AppCompatActivity {
 
         EditText email = findViewById(R.id.tv_email);
         EditText password = findViewById(R.id.tv_password);
+        EditText password_confirm = findViewById(R.id.tv_password_confirm);
 
         moveToLogin = new Intent(this, LoginActivity.class);
 
         Button joinBtn = findViewById(R.id.joinBtn);
 
+
+
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userEmail = email.getText().toString().trim();
-                createAccount(userEmail, password.getText().toString().trim());
+
+                // password confirm
+                if (password.getText().toString().equals(password_confirm.getText().toString())) is_password_confirm = true;
+                else is_password_confirm = false;
+
+                if(is_password_confirm){
+                    createAccount(userEmail, password.getText().toString().trim());
+                }
+                else{
+                    Toast.makeText(JoinActivity.this, R.string.password_not_equal_warning,
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -84,4 +99,5 @@ public class JoinActivity extends AppCompatActivity {
 
         // [END create_user_with_email]
     }
+
 }

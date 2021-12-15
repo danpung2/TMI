@@ -49,6 +49,20 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
+    <EditText
+        android:id="@+id/tv_password_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/password_confirm"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
 
     <Button
         android:id="@+id/joinBtn"
