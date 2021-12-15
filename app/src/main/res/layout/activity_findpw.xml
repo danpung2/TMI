@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FindPW"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/info"
+        android:id="@+id/tv_find_pw_info"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
-        android:text="비밀번호 찾기"
+        android:text="@string/password_find"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp" />
@@ -21,7 +21,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="회원가입 시 입력한 이메일로\n새 비밀번호를 보내드릴게요"
+        android:text="@string/password_find_msg"
         android:textAlignment="center"
         android:textColor="#94928d"
         android:textSize="20sp" />
@@ -34,22 +34,23 @@
         android:layout_marginTop="100dp"
         android:layout_margin="5dp"
         android:background="@color/white"
-        android:hint="이메일"
+        android:hint="@string/email"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
     <Button
-        android:id="@+id/joinBtn"
+        android:id="@+id/sendBtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:background="@color/white"
-        android:text="보내기"
+        android:layout_marginTop="20dp"
+        android:text="@string/send"
+        android:backgroundTint="@color/cobalt_blue_next"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:queryBackground="@drawable/round" />
 
 
 </LinearLayout>
