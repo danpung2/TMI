@@ -36,6 +36,7 @@
     <string name="account_info">계정</string>
     <string name="password_change">비밀번호 변경</string>
     <string name="logout">로그아웃</string>
+    <string name="logout_sure">로그아웃하시겠습니까?</string>
     <string name="delete_account">회원 탈퇴</string>
     <string name="delete_account_sure">회원 탈퇴를 진행하시겠습니까?</string>
     <string name="app_info">앱 정보</string>

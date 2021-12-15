@@ -104,8 +104,26 @@ public class SettingActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Log.d(TAG, "Email sent");
-                            StartToast(R.string.email_sent);
+                            AlertDialog.Builder alBuilder = new AlertDialog.Builder(SettingActivity.this);
+                            alBuilder.setMessage(R.string.password_find_msg);
+                            alBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Log.d(TAG, "Email sent");
+                                    StartToast(R.string.email_sent);
+                                }
+                            });
+
+                            alBuilder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    return;
+                                }
+                            });
+                            alBuilder.setTitle(R.string.password_change);
+                            alBuilder.show();
+
+
                         }
 
                     }
@@ -113,11 +131,28 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     public void signOut(){
-        FirebaseAuth.getInstance().signOut();
-        Log.d(TAG, "Logout");
-        StartToast(R.string.logout_success);
-        startActivity(moveToStart);
-        finish();
+        AlertDialog.Builder alBuilder = new AlertDialog.Builder(SettingActivity.this);
+        alBuilder.setMessage(R.string.logout_sure);
+        alBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseAuth.getInstance().signOut();
+                Log.d(TAG, "Logout");
+                StartToast(R.string.logout_success);
+                startActivity(moveToStart);
+                finish();
+            }
+        });
+
+        alBuilder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                return;
+            }
+        });
+        alBuilder.setTitle(R.string.logout);
+        alBuilder.show();
+
     }
 
     public void deleteUser(){
