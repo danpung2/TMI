@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +29,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 
 public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.ViewHolder> {
+    public static ImageButton btn_Delete;
     ArrayList<PostInfo> items = new ArrayList<PostInfo>();
     private static final String TAG = "PostAdapter_Scrap";
     private FirebaseUser user;
@@ -61,7 +63,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        ImageView tv_Delete;
+        ImageView btn_Delete;
         TextView tv_Dday;
         TextView tv_Date;
         TextView tv_Title;
@@ -72,7 +74,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
             super(itemView);
             tv_Dday = (TextView) itemView.findViewById(R.id.tv_Dday);
             imageView = itemView.findViewById(R.id.imageView);
-            tv_Delete = itemView.findViewById(R.id.tv_delete);
+            btn_Delete = itemView.findViewById(R.id.btn_delete);
             tv_Date = (TextView) itemView.findViewById(R.id.tv_Date);
             tv_Title = (TextView) itemView.findViewById(R.id.tv_Title);
             tv_Team = (TextView) itemView.findViewById(R.id.tv_team);
@@ -103,7 +105,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
             });
 
             user = FirebaseAuth.getInstance().getCurrentUser();
-            tv_Delete.setOnClickListener(new View.OnClickListener() {
+            btn_Delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     db.collection("Users").document(user.getUid())

@@ -55,6 +55,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         PostInfo item = items.get(position);
         viewHolder.setItem(item);
+
+
     }
 
     @Override

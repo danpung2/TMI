@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -34,9 +36,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 public class ScrapFragment extends Fragment {
+    private static PostAdapter_Scrap adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
     FirebaseUser user;
+    ImageButton btn_Delete;
+
+
 
 
     @Nullable
@@ -46,14 +52,22 @@ public class ScrapFragment extends Fragment {
 
         swipeRefreshLayout = view.findViewById(R.id.switerfresh);
         user = FirebaseAuth.getInstance().getCurrentUser();
+        btn_Delete = PostAdapter_Scrap.btn_Delete;
 
         //initialize views
         recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        PostAdapter_Scrap adapter = new PostAdapter_Scrap(getContext());
 
-        showData(adapter);
+//        // 삭제 버튼 클릭했을때
+//        btn_Delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               refresh();
+//            }
+//
+//        });
+
 
         return view;
     }
@@ -72,6 +86,22 @@ public class ScrapFragment extends Fragment {
             }
         });
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refresh();
+
+    }
+
+    public void refresh(){
+        adapter = new PostAdapter_Scrap(getContext());
+        adapter.notifyDataSetChanged();
+        showData(adapter);
+    }
+
+
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
