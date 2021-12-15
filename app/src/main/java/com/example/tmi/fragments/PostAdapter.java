@@ -126,18 +126,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
             // 위의 저장소를 참조하는 파일명으로 지정
             StorageReference storageReference = firebaseStorage.getReferenceFromUrl("gs://gachon--tmi.appspot.com/images/" + item.getFilename());
-            //StorageReference에서 파일 다운로드 URL 가져옴
-            storageReference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()) {
-                        Glide.with(itemView)
-                                .load(task.getResult())
-                                .override(1024, 980)
-                                .into(imageView);
+
+
+            if(!item.getFilename().equals("no_image.jpg")){
+                //StorageReference에서 파일 다운로드 URL 가져옴
+                storageReference.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if (task.isSuccessful()) {
+                            Glide.with(itemView)
+                                    .load(task.getResult())
+                                    .override(1024, 980)
+                                    .into(imageView);
+                        }
                     }
-                }
-            });
+                });
+            }
+
 
         }
     }
