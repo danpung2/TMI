@@ -52,7 +52,6 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
-
         }else{
 
 
@@ -64,13 +63,11 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(moveToJoin);
             });
 
-
             loginBtn.setOnClickListener(v -> {
                 startActivity(moveToLogin);
             });
 
         }
-
 
 
 

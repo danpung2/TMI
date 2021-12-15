@@ -1,11 +1,13 @@
 package com.example.tmi.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +33,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     private static final String TAG = "PostAdapter";
     private FirebaseUser user;
     private Context context;
-    Boolean heart_clicked = false;
+    Boolean scrap_clicked = false;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public PostAdapter(Context context) {
@@ -61,7 +63,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        ImageView iv_scrap;
+        ImageButton iv_scrap;
         TextView tv_Dday;
         TextView tv_Date;
         TextView tv_Title;
@@ -104,12 +106,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
             user = FirebaseAuth.getInstance().getCurrentUser();
             iv_scrap.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("ResourceAsColor")
                 @Override
                 public void onClick(View view) {
 
                     db.collection("Users").document(user.getUid())
                             .update("scrapList", FieldValue.arrayUnion(item.getTitle())); //파이어스토어에 추가
-                    Toast.makeText(context, "스크랩이 완료됐습니다", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, R.string.scrap_success, Toast.LENGTH_SHORT).show();
                 }
             });
 

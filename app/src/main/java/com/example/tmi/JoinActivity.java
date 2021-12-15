@@ -61,7 +61,7 @@ public class JoinActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
-                            Toast.makeText(JoinActivity.this, "회원가입 성공",
+                            Toast.makeText(JoinActivity.this, R.string.join_success,
                                     Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             HashMap<Object, String> hashMap = new HashMap<>();
@@ -74,7 +74,7 @@ public class JoinActivity extends AppCompatActivity {
                         else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(JoinActivity.this, "비밀번호는 6자리 이상이어야합니다.",
+                            Toast.makeText(JoinActivity.this, R.string.password_length_warning,
                                     Toast.LENGTH_SHORT).show();
                             return;
                         }

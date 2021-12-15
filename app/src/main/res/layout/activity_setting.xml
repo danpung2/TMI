@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="20dp"
         android:background="#00ff0000"
         android:text="비밀번호 변경"
         android:textColor="@color/black" />
@@ -51,6 +51,13 @@
         android:background="#00ff0000"
         android:text="로그아웃"
         android:textColor="@color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:backgroundTint="@color/black"
+
+/>
 
     <Button
         android:id="@+id/remove"

@@ -31,7 +31,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
     private static final String TAG = "PostAdapter_Scrap";
     private FirebaseUser user;
     private Context context;
-    Boolean heart_clicked = false;
+    Boolean scrap_clicked = false;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public PostAdapter_Scrap(Context context) {
@@ -108,7 +108,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
 
                     db.collection("Users").document(user.getUid())
                             .update("scrapList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
-                    Toast.makeText(context, "스크랩에서 삭제하였습니다", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, R.string.scrap_cancel_success, Toast.LENGTH_SHORT).show();
 
                 }
             });
