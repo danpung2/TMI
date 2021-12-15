@@ -107,7 +107,6 @@ public class JoinActivity extends AppCompatActivity {
 
     public void StartToast(Integer msg){
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.TOP, 0, 200);
         toast.show();
     }
 }

@@ -99,9 +99,8 @@ public class FindPW extends AppCompatActivity {
                 });
     }
 
-    public void StartToast(Integer msg) {
+    public void StartToast(Integer msg){
         Toast toast = Toast.makeText(FindPW.this, msg, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.TOP, 0, 200);
         toast.show();
     }
 }

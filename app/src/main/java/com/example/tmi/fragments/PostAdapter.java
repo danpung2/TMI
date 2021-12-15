@@ -165,7 +165,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     public void StartToast(Integer msg){
         Toast toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.TOP, 0, 200);
         toast.show();
     }
 }
