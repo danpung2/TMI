@@ -83,10 +83,17 @@ public class JoinActivity extends AppCompatActivity {
                             startActivity(moveToLogin);
                             finish();
                         }
-                        else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            StartToast(R.string.password_length_warning);
+                        else{
+                            if(password.length() < 6){
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                StartToast(R.string.password_length_warning);
+                            }
+                            else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                StartToast(R.string.password_email_warning);
+                            }
                             return;
                         }
                     }
