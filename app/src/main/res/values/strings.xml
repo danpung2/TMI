@@ -15,9 +15,11 @@
     <string name="password_not_equal_warning">비밀번호가 일치하지 않습니다.</string>
     <string name="find_password">비밀번호를 잊어버리셨나요?</string>
     <string name="join_success">회원가입에 성공했습니다.</string>
+    <string name="login_blank">이메일과 비밀번호를 입력해주세요</string>
     <string name="login_failed">로그인에 실패했습니다.</string>
     <string name="password_find">비밀번호 찾기</string>
     <string name="password_find_msg">회원가입 시 입력한 이메일로\n비밀번호 변경 메일을 보내드립니다.</string>
+    <string name="email_wrong">해당 이메일로 가입한 정보가 없습니다</string>
     <string name="send">보내기</string>
     <string name="search_hint">검색어를 입력하세요</string>
     <string name="no_data">결과가 없습니다.</string>

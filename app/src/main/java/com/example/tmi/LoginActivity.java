@@ -47,7 +47,10 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn(email.getText().toString().trim(), password.getText().toString().trim());
+                // editText length check
+                if(email.length()==0 || password.length()==0){
+                    StartToast(R.string.login_blank);
+                }else signIn(email.getText().toString().trim(), password.getText().toString().trim());
             }
         });
     }

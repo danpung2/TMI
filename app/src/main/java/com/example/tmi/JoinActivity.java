@@ -56,7 +56,11 @@ public class JoinActivity extends AppCompatActivity {
                 else is_password_confirm = false;
 
                 if(is_password_confirm){
-                    createAccount(userEmail, password.getText().toString().trim());
+                    // editText length check
+
+                    if(email.length()==0 || password.length()==0){
+                        StartToast(R.string.login_blank);
+                    }else createAccount(userEmail, password.getText().toString().trim());
                 }
                 else{
                     StartToast(R.string.password_not_equal_warning);
