@@ -1,6 +1,5 @@
 package com.example.tmi;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,20 +26,21 @@ public class SearchViewActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseUser user;
     String searchWord;
-    TextView tv_no_data;
+    TextView tv_no_search_data;
     TextView tv_search_result;
-    Boolean setVisible;
-    Context mContext;
+    int search_count=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchview);
         Intent intent = getIntent();
         searchWord = intent.getStringExtra("query");
-        tv_no_data = findViewById(R.id.tv_no_data);
-        tv_search_result = findViewById(R.id.tv_search_result);
 
-        tv_no_data.setText("");
+        tv_no_search_data = findViewById(R.id.tv_no_search_data);
+        tv_no_search_data.setVisibility(View.VISIBLE);
+        tv_no_search_data.setText(R.string.no_data);
+
+        tv_search_result = findViewById(R.id.tv_search_result);
         tv_search_result.setText(searchWord + " 검색 결과");
 
         //initialize views
@@ -49,18 +48,16 @@ public class SearchViewActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         PostAdapter adapter = new PostAdapter(this);
-
-        setVisible = false;
         showData(adapter);
-        if(setVisible)
-        tv_no_data.setVisibility(View.VISIBLE);
-        else tv_no_data.setVisibility(View.INVISIBLE);
+
 
     }
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private void showData(PostAdapter adapter){
-        db.collection("Exhibitions").orderBy("DueDate", Query.Direction.ASCENDING).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("Exhibitions").orderBy("DueDate", Query.Direction.ASCENDING).
+                get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -68,18 +65,13 @@ public class SearchViewActivity extends AppCompatActivity {
                     for (DocumentSnapshot doc : task.getResult()) {
 
                         String Title =  doc.getString("Title");
-                        tv_no_data = findViewById(R.id.tv_no_data);
                         if(!Title.contains(searchWord)){
-//                            tv_no_data.setText(R.string.no_data);
-//                            tv_no_data.setTextColor(getResources().getColor(R.color.gray));
-//                            recyclerView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.gray));
-                            setVisible = true;
                             continue;
                         }else{
-//                            tv_no_data.setText("");
-//                            tv_no_data.setTextColor(getResources().getColor(R.color.white));
-                            setVisible = false;
+                            search_count+=1;
+                            tv_no_search_data.setVisibility(View.INVISIBLE);
                         }
+                        System.out.println("@@@@" + search_count);
                         String DDay = doc.getString("DDay");
                         String startDate = doc.getString("StartDate");
                         String DueDate = doc.getString("DueDate");
@@ -97,6 +89,8 @@ public class SearchViewActivity extends AppCompatActivity {
                     }
                 } else {
                     Log.d("TAG", "Error getting documents: ", task.getException());
+                    tv_no_search_data.setVisibility(View.VISIBLE);
+                    tv_no_search_data.setText(R.string.cannot_load_data);
                 }
             }
         });

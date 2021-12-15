@@ -91,7 +91,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
             tv_Date.setText(item.getDueDate()); // 기한
             tv_Title.setText(item.getTitle()); // 제목
             tv_Team.setText(item.getTeam()); // 개인 or 팀
-            tv_Maximum.setText(item.getNumPerson() + "/" + item.getMaxNum()); // 현재 참여자 수 / 최대 참여자 수
+            tv_Maximum.setText(item.getNumPerson() + "/" + item.getMaxNum()); // 현재 참여자 수/최대 참여자 수
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
