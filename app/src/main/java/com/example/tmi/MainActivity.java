@@ -31,12 +31,15 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton setting;
     private  VPAdapter vpAdapter;
     public String UserUid;
+    Context context;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        context = this.context;
 
         setting = findViewById(R.id.settingBtn);
 
@@ -90,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void refresh(){
         vpAdapter.notifyDataSetChanged();
-
     }
 
     @Override

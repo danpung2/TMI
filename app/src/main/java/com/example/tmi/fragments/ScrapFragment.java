@@ -1,10 +1,12 @@
 package com.example.tmi.fragments;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -35,39 +38,34 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
-public class ScrapFragment extends Fragment {
+public class ScrapFragment extends Fragment{
     private static PostAdapter_Scrap adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
     FirebaseUser user;
     ImageButton btn_Delete;
 
-
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_scrap, container, false);
+        View view = inflater.inflate(R.layout.fragment_scrap, container, false);
 
         swipeRefreshLayout = view.findViewById(R.id.switerfresh);
         user = FirebaseAuth.getInstance().getCurrentUser();
         btn_Delete = PostAdapter_Scrap.btn_Delete;
 
         //initialize views
-        recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-//        // 삭제 버튼 클릭했을때
+        // 삭제 버튼 클릭했을때
 //        btn_Delete.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//               refresh();
+//                ((MainActivity) getActivity()).refresh();
 //            }
-//
 //        });
-
 
         return view;
     }
@@ -80,7 +78,7 @@ public class ScrapFragment extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                ((MainActivity)getActivity()).refresh();
+                ((MainActivity) getActivity()).refresh();
 
                 swipeRefreshLayout.setRefreshing(false);
             }
@@ -95,17 +93,16 @@ public class ScrapFragment extends Fragment {
 
     }
 
-    public void refresh(){
+    public void refresh() {
         adapter = new PostAdapter_Scrap(getContext());
         adapter.notifyDataSetChanged();
         showData(adapter);
     }
 
 
-
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private void showData(PostAdapter_Scrap adapter){
+
+    private void showData(PostAdapter_Scrap adapter) {
 
         DocumentReference docRef = db.collection("Users").document(user.getUid());
         Task<DocumentSnapshot> documentSnapshotTask = docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -151,11 +148,11 @@ public class ScrapFragment extends Fragment {
                         });
 
                     }
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     e.printStackTrace();
                 }
 
             }
         });
-    };
+    }
 }

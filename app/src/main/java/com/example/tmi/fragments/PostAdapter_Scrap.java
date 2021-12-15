@@ -1,5 +1,7 @@
 package com.example.tmi.fragments;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -16,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.tmi.MainActivity;
 import com.example.tmi.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -111,6 +114,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
                     db.collection("Users").document(user.getUid())
                             .update("scrapList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
                     StartToast(R.string.scrap_cancel_success);
+                    ((MainActivity)context).refresh();
                 }
             });
 
@@ -135,6 +139,7 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
 
         }
     }
+
 
     public void addItem(PostInfo item) {
         items.add(item);
