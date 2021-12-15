@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,7 +113,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
                     db.collection("Users").document(user.getUid())
                             .update("scrapList", FieldValue.arrayUnion(item.getTitle())); //파이어스토어에 추가
-                    Toast.makeText(context, R.string.scrap_success, Toast.LENGTH_SHORT).show();
+                    StartToast(R.string.scrap_success);
                 }
             });
 
@@ -152,6 +153,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     public void setItem(int position, PostInfo item) {
         items.set(position, item);
+    }
+
+    public void StartToast(Integer msg){
+        Toast toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.TOP, 0, 200);
+        toast.show();
     }
 }
 

@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +19,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -60,8 +59,7 @@ public class JoinActivity extends AppCompatActivity {
                     createAccount(userEmail, password.getText().toString().trim());
                 }
                 else{
-                    Toast.makeText(JoinActivity.this, R.string.password_not_equal_warning,
-                            Toast.LENGTH_SHORT).show();
+                    StartToast(R.string.password_not_equal_warning);
                 }
             }
         });
@@ -76,8 +74,7 @@ public class JoinActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
-                            Toast.makeText(JoinActivity.this, R.string.join_success,
-                                    Toast.LENGTH_SHORT).show();
+                            StartToast(R.string.join_success);
                             FirebaseUser user = mAuth.getCurrentUser();
                             HashMap<Object, String> hashMap = new HashMap<>();
                             hashMap.put("email", userEmail);
@@ -89,15 +86,17 @@ public class JoinActivity extends AppCompatActivity {
                         else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(JoinActivity.this, R.string.password_length_warning,
-                                    Toast.LENGTH_SHORT).show();
+                            StartToast(R.string.password_length_warning);
                             return;
                         }
                     }
                 });
 
-
-        // [END create_user_with_email]
     }
 
+    public void StartToast(Integer msg){
+        Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.TOP, 0, 200);
+        toast.show();
+    }
 }

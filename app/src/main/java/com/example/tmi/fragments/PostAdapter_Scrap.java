@@ -3,6 +3,7 @@ package com.example.tmi.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,11 +106,9 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
             tv_Delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     db.collection("Users").document(user.getUid())
                             .update("scrapList", FieldValue.arrayRemove(item.getTitle())); //파이어스토어에서 삭제
-                    Toast.makeText(context, R.string.scrap_cancel_success, Toast.LENGTH_SHORT).show();
-
+                    StartToast(R.string.scrap_cancel_success);
                 }
             });
 
@@ -149,6 +148,12 @@ public class PostAdapter_Scrap extends RecyclerView.Adapter<PostAdapter_Scrap.Vi
 
     public void setItem(int position, PostInfo item) {
         items.set(position, item);
+    }
+
+    public void StartToast(Integer msg){
+        Toast toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.TOP, 0, 200);
+        toast.show();
     }
 }
 
